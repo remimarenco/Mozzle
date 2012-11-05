@@ -2,7 +2,9 @@
 
 
 /* BALISE ****************************************************************************************/
-
+body{
+	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
+}
 
 /* HELPER ****************************************************************************************/
 
@@ -66,6 +68,32 @@
 }
 
 #bouton-mots{
-	background-color: #87E990;
-	color:#87E990;
+	background: #0B59D5;
+	background-image: -webkit-linear-gradient(left,#0B59D5, #FFD700); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(left,#0B59D5, #FFD700); /* FF3.6 */
+	background-image:     -ms-linear-gradient(left,#0B59D5, #FFD700); /* IE10 */
+	background-image:      -o-linear-gradient(left,#0B59D5, #FFD700); /* Opera 11.10+ */
+	background-image:         linear-gradient(left,#0B59D5, #FFD700);
 }
+#bouton-mots:hover{
+	background: #FFFFFF;
+}
+
+#bouton-puzzle{
+	background: #12C415;
+}
+#bouton-puzzle:hover{
+	background: #FFFFFF;
+}
+
+#bouton-help{
+	background: #CA0000;
+}
+#bouton-help:hover{
+	background: #FFFFFF;
+}
+
+#puzzle-facile{
+	background: #0B59D5;
+}
+
