@@ -2,7 +2,9 @@
 
 
 /* BALISE ****************************************************************************************/
-
+body{
+	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
+}
 
 /* HELPER ****************************************************************************************/
 
@@ -57,7 +59,7 @@
 .clear{
 	clear: both;
 }
-<<<<<<< HEAD
+
 .piece{
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
@@ -67,7 +69,7 @@
 	width:2px;
 }
 
-=======
+
 
 /* CLASS ****************************************************************************************/
 
@@ -81,7 +83,54 @@
 }
 
 #bouton-mots{
+
 	background-color: #87E990;
 	color:#87E990;
->>>>>>> 13fba846c7788f51133075920feb375786d34654
+	background: #0B59D5;
+}
+#bouton-mots:hover{
+	background: #FFFFFF;
+}
+
+#bouton-puzzle{
+	background: #12C415;
+}
+#bouton-puzzle:hover{
+	background: #FFFFFF;
+}
+
+.ordre ul li, .desordre ul li {
+	float: left;
+	list-style-type: none;
+}
+
+.illustration img{
+	width: 20%;
+	height: 20%;	
+
+}
+
+#bouton-help{
+	background: #CA0000;
+}
+#bouton-help:hover{
+	background: #FFFFFF;
+}
+
+#puzzle-facile{
+	background: #0B59D5;
+}
+
+/* Puzzle */
+
+#puzzle-frame {
+	border: solid black 0.3em;
+	width: 60em;
+	height: 80em;
+}
+
+#puzzle-frame > div {
+	width: 20em;
+	height: 20em;
+	float: left;
 }
