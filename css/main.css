@@ -22,6 +22,10 @@
 	font-style: italic;
 }
 
+.font-white{
+	color:#eee;
+}
+
 .margin-bottom20{
 	margin-bottom: 20px;
 }
@@ -53,6 +57,7 @@
 .clear{
 	clear: both;
 }
+<<<<<<< HEAD
 .piece{
 	padding: 0 0 0 0;
 	margin: 0 0 0 0;
@@ -60,4 +65,23 @@
 }
 .ui-block-a{
 	width:2px;
+}
+
+=======
+
+/* CLASS ****************************************************************************************/
+
+.content{
+	background-image: -webkit-linear-gradient(left,#ED7F10, #FFD700); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(left,#ED7F10, #FFD700); /* FF3.6 */
+	background-image:     -ms-linear-gradient(left,#ED7F10, #FFD700); /* IE10 */
+	background-image:      -o-linear-gradient(left,#ED7F10, #FFD700); /* Opera 11.10+ */
+	background-image:         linear-gradient(left,#ED7F10, #FFD700);
+		
+}
+
+#bouton-mots{
+	background-color: #87E990;
+	color:#87E990;
+>>>>>>> 13fba846c7788f51133075920feb375786d34654
 }
