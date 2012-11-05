@@ -1,113 +1,111 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Mozzle</title>
-		<link rel="stylesheet" href="css/lib/jquery.mobile-1.2.0.min.css" />
-		<link rel="stylesheet" href="css/main.css" />
-		<script src="js/lib/cordova-2.1.0.js"></script>
-		<script src="js/lib/jquery-1.8.2.min.js"></script>
-		<script src="js/data.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
-	</head>
-	<body>
-		<div data-role="page" class="type-index">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">MOZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
-			</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mozzle</title>
+	<link rel="stylesheet" href="css/lib/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<script src="js/lib/cordova-2.1.0.js"></script>
+	<script src="js/lib/jquery-1.8.2.min.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+</head>
+<body>
+	<div id="index" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">MOZZLE</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+		</div>
 
-			<div data-role="content" class="content">	
-				<p align="center"><img src="./res/img/puzzle.png" alt="logo" /></p>
-				<a id="bouton-mots" data-role="button" href="#type-mots">Mots</a>
-				<a id="bouton-puzzle" data-role="button" href="#type-puzzle">Puzzles</a>
-				<a id="bouton-help" data-role="button" href="#type-help">Help</a>
-			</div>
-			
-			<div data-role="footer" data-theme="a">
-					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-			</div>
-		</div>		
+		<div data-role="content" class="content">	
+			<p align="center"><img src="./res/img/puzzle.png" alt="logo" /></p>
+			<a id="bouton-mots" data-role="button" href="#type-mots">Mots</a>
+			<a id="bouton-puzzle" data-role="button" href="#type-puzzle">Puzzles</a>
+			<a id="bouton-help" data-role="button" href="#type-help">Help</a>
+		</div>
 
-		<div id="type-mots" data-role="page" class="type-index">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">MOTS</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
-			</div>
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>		
+	<div id="type-mots" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">MOTS</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+		</div>
 
-			<div data-role="content" class="content">	
-				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-					<li data-role="list-divider" data-theme="c">Menu</li>
-					<li><a href="#mot-niveau-1" data-transition="flip" data-contact="false" >Niveau 1</a></li>
-					<li><a href="#mot-niveau-2" data-transition="flip" data-contact="false" >Niveau 2</a></li>
-					<li><a href="#mot-niveau-3" data-transition="flip" data-contact="false" >Niveau 3</a></li>
+		<div data-role="content" class="content">	
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
+				<li data-role="list-divider" data-theme="c">Menu</li>
+				<li><a href="#mot-niveau-1" data-transition="flip">Facile</a></li>
+				<li><a href="#mot-niveau-2" data-transition="flip">Moyen</a></li>
+				<li><a href="#mot-niveau-3" data-transition="flip">Difficile</a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<div id="mot-niveau-1" data-role="page">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">MOTS</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+		</div>
+		<div data-theme="d" data-role="content">
+			<div class="illustration"><img src="res/img/fruits/poire.png" /></div>
+			<div class="ordre">
+				<ul>
+					<li>P</li>
+					<li>O</li>
+					<li>I</li>
+					<li>R</li>
+					<li>E</li>
 				</ul>
 			</div>
-			
-			<div data-role="footer" data-theme="a">
-					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-			</div>
-		</div>
-		
-		<div id="mot-niveau-1" data-role="page">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">MOTS</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
-			</div>
-			<div class="" data-theme="d" data-role="content">
-				<div class="illustration"><img src="res/img/fruits/poire.png" /></div>
-				<div class="ordre">
-					<ul>
-						<li>P</li>
-						<li>O</li>
-						<li>I</li>
-						<li>R</li>
-						<li>E</li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-				<div class="desordre">
-					<ul>
-						<li>P</li>
-						<li>O</li>
-						<li>I</li>
-						<li>R</li>
-						<li>E</li>
-					</ul>
-				</div>
-			</div>
-			<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
-			<div data-role="footer" data-theme="a">
-					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-			</div>
-		</div>
-
-		<div id="type-puzzle" data-role="page" class="type-index">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">PUZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
-			</div>
-
-			<div data-role="content" class="content">	
-				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-					<li data-role="list-divider" data-theme="c">Menu</li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 1</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 2</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 3</a></li>
+			<div class="clear"></div>
+			<div class="desordre">
+				<ul>
+					<li>P</li>
+					<li>O</li>
+					<li>I</li>
+					<li>R</li>
+					<li>E</li>
 				</ul>
 			</div>
-			
-			<div data-role="footer" data-theme="a">
-					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-			</div>
 		</div>
-		
-		<div data-role="popup" id="type-help" class="ui-content" style="max-width:280px">
-			<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-			<p>A completer avec la description des jeux.</p>
+		<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
-		
-	</body>
+	</div>
+
+	<div id="type-puzzle" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">PUZZLE</p>
+			<a href="#index" data-icon="home" data-iconpos="notext" >Home</a>
+		</div>
+
+		<div data-role="content" class="content">	
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
+				<li data-role="list-divider" data-theme="c">Menu</li>
+				<li><a id="puzzle-facile" href="#index" data-transition="flip">Facile</a></li>
+				<li><a id="puzzle-moyen" href="#index" data-transition="flip">Moyen</a></li>
+				<li><a id="puzzle-difficile" href="#index" data-transition="flip">Difficile</a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<div data-role="popup" id="type-help" class="ui-content" style="max-width:280px">
+		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+		<p>A completer avec la description des jeux.</p>
+	</div>
+</body>
 </html>

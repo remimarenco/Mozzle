@@ -15,9 +15,6 @@ function onDeviceReady(){
 // Déclenchement du jeu mot niveau 1
 $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // recupéré la liste des mot
-    $.getJSON("data.json", function(data) {
-        console.log(data);
-    });
     // choisir un aléatoirement
     // recuperer sa taille
     // mettre l'image
