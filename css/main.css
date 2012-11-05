@@ -57,3 +57,19 @@
 .clear{
 	clear: both;
 }
+
+/* CLASS ****************************************************************************************/
+
+.content{
+	background-image: -webkit-linear-gradient(left,#ED7F10, #FFD700); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(left,#ED7F10, #FFD700); /* FF3.6 */
+	background-image:     -ms-linear-gradient(left,#ED7F10, #FFD700); /* IE10 */
+	background-image:      -o-linear-gradient(left,#ED7F10, #FFD700); /* Opera 11.10+ */
+	background-image:         linear-gradient(left,#ED7F10, #FFD700);
+		
+}
+
+#bouton-mots{
+	background-color: #87E990;
+	color:#87E990;
+}
