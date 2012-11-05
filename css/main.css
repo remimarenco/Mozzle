@@ -24,6 +24,10 @@ body{
 	font-style: italic;
 }
 
+.font-white{
+	color:#eee;
+}
+
 .margin-bottom20{
 	margin-bottom: 20px;
 }
