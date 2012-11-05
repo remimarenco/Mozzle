@@ -73,3 +73,19 @@
 	background-color: #87E990;
 	color:#87E990;
 }
+
+
+.ordre ul li {
+	float: left;
+	list-style-type: none;
+}
+
+.desordre ul li {
+	float: left;
+	list-style-type: none;
+}
+
+.illustration img{
+	width: 20%;
+	height: 20%;	
+}

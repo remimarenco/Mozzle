@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="css/main.css" />
 		<script src="js/lib/cordova-2.1.0.js"></script>
 		<script src="js/lib/jquery-1.8.2.min.js"></script>
+		<script src="js/data.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
 	</head>
@@ -15,7 +16,7 @@
 		<div data-role="page" class="type-index">
 			<div data-role="header" data-theme="a">
 				<p align="center" style="color: white;">MOZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
 			</div>
 
 			<div data-role="content" class="content">	
@@ -28,27 +29,20 @@
 			<div data-role="footer" data-theme="a">
 					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 			</div>
-		</div>
-		<div data-role="page" id="mot1">
-			<div data-theme="a" data-role="header">
-				<h3>
-					Jeux des mots difficulté 1				
-				</h3>
-			</div>
-					
+		</div>		
 
 		<div id="type-mots" data-role="page" class="type-index">
 			<div data-role="header" data-theme="a">
 				<p align="center" style="color: white;">MOTS</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
 			</div>
 
 			<div data-role="content" class="content">	
 				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
 					<li data-role="list-divider" data-theme="c">Menu</li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 1</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 2</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 3</a></li>
+					<li><a href="#mot-niveau-1" data-transition="flip" data-contact="false" >Niveau 1</a></li>
+					<li><a href="#mot-niveau-2" data-transition="flip" data-contact="false" >Niveau 2</a></li>
+					<li><a href="#mot-niveau-3" data-transition="flip" data-contact="false" >Niveau 3</a></li>
 				</ul>
 			</div>
 			
@@ -57,29 +51,34 @@
 			</div>
 		</div>
 		
-		<div class="mot-niveau-1" data-role="page">
+		<div id="mot-niveau-1" data-role="page">
 			<div data-role="header" data-theme="a">
 				<p align="center" style="color: white;">MOTS</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
 			</div>
-			<div class="content" data-role="content">
-				<div class="illustration"><img src="res/img/alatoire......" /></div>
+			<div class="" data-theme="d" data-role="content">
+				<div class="illustration"><img src="res/img/fruits/poire.png" /></div>
 				<div class="ordre">
-					<div class="ui-grid-a">
-						<div class="ui-block-a">P</div>
-						<div class="ui-block-b">O</div>
-						<div class="ui-block-c">I</div>
-						<div class="ui-block-d font-white">R</div><!-- Mettre une class couleur blanche quand pas rempli -->
-						<div class="ui-block-e font-white">E</div>
-					</div>
+					<ul>
+						<li>P</li>
+						<li>O</li>
+						<li>I</li>
+						<li>R</li>
+						<li>E</li>
+					</ul>
 				</div>
+				<div class="clear"></div>
 				<div class="desordre">
-					<div class="ui-grid-b">
-						<div class="ui-block-d">R</div>
-						<div class="ui-block-e">E</div>	
-					</div>
+					<ul>
+						<li>P</li>
+						<li>O</li>
+						<li>I</li>
+						<li>R</li>
+						<li>E</li>
+					</ul>
 				</div>
 			</div>
+			<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
 			<div data-role="footer" data-theme="a">
 					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 			</div>
@@ -88,15 +87,15 @@
 		<div id="type-puzzle" data-role="page" class="type-index">
 			<div data-role="header" data-theme="a">
 				<p align="center" style="color: white;">PUZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" >Home</a>
 			</div>
 
 			<div data-role="content" class="content">	
 				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
 					<li data-role="list-divider" data-theme="c">Menu</li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 1</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 2</a></li>
-					<li><a href="index.html" data-transition="flip" data-contact="false" rel="external">Niveau 3</a></li>
+					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 1</a></li>
+					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 2</a></li>
+					<li><a href="index.html" data-transition="flip" data-contact="false" >Niveau 3</a></li>
 				</ul>
 			</div>
 			
