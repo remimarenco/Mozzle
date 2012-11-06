@@ -99,7 +99,7 @@ body{
 	background: #FFFFFF;
 }
 
-.ordre ul li, .desordre ul li {
+#ordre ul li, #desordre ul li {
 	float: left;
 	list-style-type: none;
 }

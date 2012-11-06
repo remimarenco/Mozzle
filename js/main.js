@@ -1,6 +1,6 @@
 // Lorsque Jquery mobile est pret ...
 $(document).bind("mobileinit", function(){
-  
+  // TODO Configurer jquerymobile (http://jquerymobile.com/test/docs/api/globalconfig.html)
 });
 
 // Lorsque Phonegap est pret ...
@@ -9,79 +9,66 @@ window.addEventListener('load', function () {
 }, false);
 
 function onDeviceReady(){
-    
+    // TODO mettre le code ici une fois l'appli fini pour le test avec phonegap
 }
 
+
+
+
+
+// TODO a wrap dans un module javascript
+var nbDragAction = 1;   // Nombre de fois que l'on peux jouer (autant que de lettre + 1)
+
+// TODO Declenchement du jeude mot niveau i avec controle de la difficulté dans la fonction
 // Déclenchement du jeu mot niveau 1
 $( '#mot-niveau-1' ).live( 'pageshow',function(event){
-    // recupéré la liste des mot
-    $.each(data,function(i,val){
-        console.log(i+' - '+val['libelle']);
+    
+    // On choisie un mot aléatoirement
+    var word = getOneRandomWord();
+    var wordLength = word['libelle'].length;
+    
+    var nbFirstLetter = Math.floor(wordLength / 3);     // On récupère un nombre de lettre a afficher suivant la taille du mot
+    
+    
+    $.each(word['lettres'],function(i,val){
+        // TODO
+        // Si facile
+            // On affiche en blanc
+        // Si facile ou moyen
+            // On affiche en noire les premieres lettres
+        if(i<=nbFirstLetter){
+            $('#ordre ul').append("<li id='"+val+"'>"+val+"</li>");    // On ajoute les premieres lettres en noire
+        }else{
+            $('#ordre ul').append("<li id='"+val+"' style='background-color:#222;width:16px;height:16px;' ondragenter='return false;' ondragover='return false;' ondrop=\'drop(this, event)\'> </li>");    // On ajoute les indications pour facile et moyen
+        }
     });
 
-    // choisir un aléatoirement
-    // recuperer sa taille
-    // mettre l'image
-    // remplir le mot en blanc (remplir la valeur de l'element et mettre du style pour caché)
-    // parcours modulot la taille 
-    // repasser en noir
-    // taille - modulo deja colorié
-    // pour cette taille afficher la grille du dessous (aleatoire) 
+    // Dans tout les cas,on affiche les lettres dans le desordre
+    $.each(word['lettres'],function(i,val){
+        if(i>nbFirstLetter){
+            $('#desordre ul').append("<li id='"+val+"' draggable='true' ondragstart=\'drag(this, event)\'>"+val+"</li>");    // On ajoute les lettres restantes
+        }
+        nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
+    });
 
+    // On ajoute notre element sur la page
+    $('#illustration').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
 });
 
-
-// evenement attaché a une case rempli => voir si c pas gerer par drag n drop
-
-// nb drag n drop depasser => game over
-
-// evenement => au drop d'une lettre
-//  si c'est une case prise => gere par l'api
-//  sinon on parcourt le mot
-//   si c'est le bon style (ou bonne valeur pour chache case)
-//      onjue le son de gagné
-
-
-
-
-
-
-
-/*
-
-// set images array
-var images = [];
-var piece = "";
-var place = ""; 
-for (i=0; i<12; i++) {
-    j = i+1;
-    images[i] = "puzzle-piece" + j + ".png";    
+function getOneRandomWord(){
+    return data[Math.floor(Math.random()*data.length)]; // On mélange la liste
 }
-// randomize the pieces to display
-images.sort(function() {return 0.5 - Math.random()});
-for (i=0; i<12; i++) {
-    $('#pieces').append("<img src=\"/examples/images/puzzle/"+images[i]+"\" id=\"piece"+i+"\" draggable=true ondragstart=\"drag(this, event);\">");
-
-    // iPhone and iPad functionality
-    if (iOS) {
-        piece = "piece"+i;
-        place = "place"+i;
-        $("#piece"+i).css('float','left');
-        new webkit_draggable(piece, {revert : false, scroll : true} );
-        webkit_drop.add(place, {onDrop : function() { 
-            $("#place"+i).append(piece);
-        }
-        });
-    }
-
-}
-// add drag and drop functions on the frame divs
 
 function drag(draggableitem, e) {
-    e.dataTransfer.setData("Text", draggableitem.id);   
+    e.dataTransfer.setData("lettre", $(draggableitem).attr('id'));
 }
+
 function drop(target, e) {
-    var id = e.dataTransfer.getData('Text');
-    target.appendChild(document.getElementById(id));
-    e.preventDefault();
-}*/
+    var lettre = e.dataTransfer.getData('lettre');
+    var target = $(target);
+    if(target.attr('id')==lettre){
+        target.html(lettre);
+        e.preventDefault();
+    }
+    nbDragAction--;     // On décrémente le nombre de drag restant
+}
