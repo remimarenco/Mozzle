@@ -15,6 +15,10 @@ function onDeviceReady(){
 // Déclenchement du jeu mot niveau 1
 $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // recupéré la liste des mot
+    $.each(data,function(i,val){
+        console.log(i+' - '+val['libelle']);
+    });
+
     // choisir un aléatoirement
     // recuperer sa taille
     // mettre l'image
@@ -25,6 +29,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // pour cette taille afficher la grille du dessous (aleatoire) 
 
 });
+
 
 // evenement attaché a une case rempli => voir si c pas gerer par drag n drop
 
@@ -42,7 +47,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
 
 
 
-
+/*
 
 // set images array
 var images = [];
@@ -79,4 +84,4 @@ function drop(target, e) {
     var id = e.dataTransfer.getData('Text');
     target.appendChild(document.getElementById(id));
     e.preventDefault();
-}
+}*/
