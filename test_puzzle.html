@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Mozzle</title>
+		<link rel="stylesheet" href="css/lib/jquery.mobile-1.2.0.min.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/lib/cordova-2.1.0.js"></script>
+		<script src="js/lib/jquery-1.8.2.min.js"></script>
+		<script src="js/lib/jquery.mobiledragdrop.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+		
+		<script type="text/javascript">
+			function resize() {
+				var largeur=screen.availWidth*0.3;
+				document.getElementById('puzzle').style.width=largeur+'px';
+				document.getElementById('puzzle').style.height=largeur+'px';
+				document.getElementById('a').style.height='50%';
+				document.getElementById('b').style.height='50%';
+				document.getElementById('c').style.height='50%';
+				document.getElementById('d').style.height='50%';
+				document.getElementById('drop1').style.height=(largeur/2)+'px';
+				document.getElementById('drop1').style.width=(largeur/2)+'px';
+				document.getElementById('drop2').style.height=(largeur/2)+'px';
+				document.getElementById('drop2').style.width=(largeur/2)+'px';
+				document.getElementById('drop3').style.height=(largeur/2)+'px';
+				document.getElementById('drop3').style.width=(largeur/2)+'px';
+				document.getElementById('drop4').style.height=(largeur/2)+'px';
+				document.getElementById('drop4').style.width=(largeur/2)+'px';
+
+				
+			
+			}
+		</script>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-theme="a" data-role="header">
+				<h3>
+					Mozzle				
+				</h3>
+			</div>
+			
+			
+
+			<div data-role="content">
+				<div id='puzzle' class="ui-grid-a" style="background-color:yellow; height:10%; width:10%;">
+                    <div id="a" class="ui-block-a"  style="background-color:black; ">
+						<div class="drop" id="drop1" style="background-color:green;height=100%;width=100%;" >
+							
+						</div>
+                    </div>
+					<div id="b" class="ui-block-b">
+						<div class="drop" id="drop2" style="height=100%;width=100%;" >
+						</div>
+						
+					</div>
+                    <div id="c" class="ui-block-a">
+						<div class="drop" id="drop3" style="height=100%;width=100%;" >
+						</div>
+                    </div>
+                    <div id="d" class="ui-block-b">
+						<div class="drop" id="drop4" style="height=100%;width=100%;" > 
+						</div>
+                    </div>
+                </div>
+				
+
+				<div class="drag" id="drag1">
+					<img id='piece1' src='res/img/img1.jpg' />
+				</div>
+				<div class="drag" id="drag2">
+					<img id='piece2' src='res/img/img1.jpg' />
+				</div>
+				<div class="drag" id="drag3">
+					<img id='piece3' src='res/img/img1.jpg' />
+				</div>
+				<div class="drag" id="drag4">
+					<img id='piece4' src='res/img/img1.jpg' />
+				</div>
+			</div>
+			<script type="text/javascript">
+				resize();
+		        $(document).ready(function() {
+					$(".drag").mobiledraganddrop({ targets: ".drop", status: "#status"});
+				});
+			</script>
+		</div>
+	</body>
+</html>

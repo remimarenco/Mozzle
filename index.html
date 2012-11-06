@@ -33,60 +33,34 @@
 			
 		</div>
 
-		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-		</div>
-	</div>		
-	<div id="type-mots" data-role="page" class="type-index">
-		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">MOTS</p>
-			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
-		</div>
-
-		<div data-role="content" class="content">	
-			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-				<li data-role="list-divider" data-theme="c">Menu</li>
-				<li><a href="#mot-niveau-1" data-transition="flip">Facile</a></li>
-				<li><a href="#mot-niveau-2" data-transition="flip">Moyen</a></li>
-				<li><a href="#mot-niveau-3" data-transition="flip">Difficile</a></li>
-			</ul>
-		</div>
-
-		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-		</div>
-	</div>
-
-	<div id="mot-niveau-1" data-role="page">
-		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">MOTS</p>
-			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
-		</div>
-		<div data-theme="d" data-role="content">
-			<div class="illustration"><img src="res/img/fruits/poire.png" /></div>
-			<div class="ordre">
-				<ul>
-					<li>P</li>
-					<li>O</li>
-					<li>I</li>
-					<li>R</li>
-					<li>E</li>
-				</ul>
+		<div data-role="page" id="mot1">
+			<div data-theme="a" data-role="header">
+				<h3>
+					Jeux des mots difficulté 1				
+				</h3>
 			</div>
-			<div class="clear"></div>
-			<div class="desordre">
-				<ul>
-					<li>P</li>
-					<li>O</li>
-					<li>I</li>
-					<li>R</li>
-					<li>E</li>
-				</ul>
+			<div class="content" data-role="content">
+				<div class="illustration"><img src="res/img/alatoire......" /></div>
+				<div class="ordre">
+					<div class="ui-grid-a">
+						<div class="ui-block-a">P</div>
+						<div class="ui-block-b">O</div>
+						<div class="ui-block-c">I</div>
+						<div class="ui-block-d font-white">R</div><!-- Mettre une class couleur blanche quand pas rempli -->
+						<div class="ui-block-e font-white">E</div>
+					</div>
+				</div>
+				<div class="desordre">
+					<div class="ui-grid-b">
+						<div class="ui-block-d">R</div>
+						<div class="ui-block-e">E</div>	
+					</div>
+				</div>
 			</div>
-		</div>
-		<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
-		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<div data-role="footer" data-theme="a">
+					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			</div>
+
 		</div>
 	</div>
 
@@ -99,7 +73,7 @@
 		<div data-role="content" class="content">	
 			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
 				<li data-role="list-divider" data-theme="c">Menu</li>
-				<li><a id="puzzle-facile" href="#index" data-transition="flip">Facile</a></li>
+				<li><a id="puzzle-facile" href="#puzzle-niveau1" data-transition="flip">Facile</a></li>
 				<li><a id="puzzle-moyen" href="#index" data-transition="flip">Moyen</a></li>
 				<li><a id="puzzle-difficile" href="#index" data-transition="flip">Difficile</a></li>
 			</ul>
@@ -109,6 +83,47 @@
 			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
+	
+		<!-- Puzzle Niveau 1 -->
+	<div id="puzzle-niveau1" data-role="page" class="type-index">
+			<div data-role="header" data-theme="a">
+				<p align="center" style="color: white;">PUZZLE</p>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+			</div>
+
+			<div data-role="content" class="content">	
+				 <h1>Drag and Drop Puzzle</h1>
+				<p>
+				Drag the puzzle pieces into the puzzle frame</p>
+				<div id="pieces">
+					<h2>Pieces</h2>
+				</div>
+				<div id="frameHolder">
+					<h2>Frame</h2>
+				    <div id="puzzle-frame">
+				        <div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place4" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place5" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place6" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place7" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place8" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place9" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place10" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place11" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place12" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				    </div>
+				</div>
+
+				<script src="drag-and-drop-puzzle.js">
+				</script>
+			</div>
+			
+			<div data-role="footer" data-theme="a">
+					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			</div>
+		</div>
 
 	<div data-role="popup" id="type-help" class="ui-content" style="max-width:280px">
 		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
