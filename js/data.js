@@ -1,4 +1,7 @@
-[
+/** 
+ *  Array contenant l'ensemble des données necessaires pour notre application jeux de mot
+ */
+var data = [
     {
         "categorie":"fruits",
         "libelle": "POMME",
