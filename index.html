@@ -116,49 +116,41 @@
 		</div>
 	</div>
 	
+
 	<!--************************************************************************************************************-->
 	<!-- 								Page pour le puzzle: niveau facile											-->
 	<!--************************************************************************************************************-->
-
 	<div id="puzzle-niveau1" data-role="page" class="type-index">
-		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">PUZZLE</p>
-			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
-		</div>
-
-		<div data-role="content" class="content">	
-			 <h1>Drag and Drop Puzzle</h1>
-			<p>
-			Drag the puzzle pieces into the puzzle frame</p>
-			<div id="pieces">
-				<h2>Pieces</h2>
+			<div data-role="header" data-theme="a">
+				<p align="center" style="color: white;">PUZZLE</p>
+				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 			</div>
-			<div id="frameHolder">
-				<h2>Frame</h2>
-				<div id="puzzle-frame">
-					<div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place4" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place5" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place6" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place7" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place8" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place9" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place10" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place11" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place12" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+
+			<div data-role="content" class="content">	
+				 <h1>Drag and Drop Puzzle</h1>
+				<p>
+				Drag the puzzle pieces into the puzzle frame</p>
+
+				<div id="frameHolder">
+					<h2>Frame</h2>
+				    <div id="puzzle-frame2">
+				        <div id="place0" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				        <div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				    </div>
 				</div>
-			</div>
+				<div id="pieces">
+					<h2>Pieces</h2>
+				</div>
 
-			<script src="drag-and-drop-puzzle.js">
-			</script>
-		</div>
-			
-		<div data-role="footer" data-theme="a">
-				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-		</div>
+				<script src="drag-and-drop-puzzle.js">
+				</script>
 	</div>
+
+
+	
+
 
 	<!--************************************************************************************************************-->
 	<!-- 											Popup pour le bouton aide										-->

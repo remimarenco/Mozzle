@@ -236,6 +236,18 @@ body{
 
 }
 
+#puzzle-frame2 {
+	border: solid black 0.3em;
+	width: 40em;
+	height: 40em;
+}
+
+#puzzle-frame2 > div {
+	width: 20em;
+	height: 20em;
+	float: left;
+}
+
 
 /********************* page niveaux puzzles ************************/
 .bouton-niveau-1{
