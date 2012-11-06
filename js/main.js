@@ -39,14 +39,14 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
         if(i<=nbFirstLetter){
             $('#ordre ul').append("<li id='"+val+"'>"+val+"</li>");    // On ajoute les premieres lettres en noire
         }else{
-            $('#ordre ul').append("<li id='"+val+"' style='background-color:#222;width:16px;height:16px;' ondragenter='return false;' ondragover='return false;' ondrop=\'drop(this, event)\'> </li>");    // On ajoute les indications pour facile et moyen
+            $('#ordre ul').append("<li id='"+val+"' style='background-color:#222;width:16px;height:16px;' ondragenter='return false;' ondragover='return false;' ondrop=\'drop_mot(this, event)\'> </li>");    // On ajoute les indications pour facile et moyen
         }
     });
 
     // Dans tout les cas,on affiche les lettres dans le desordre
     $.each(word['lettres'],function(i,val){
         if(i>nbFirstLetter){
-            $('#desordre ul').append("<li id='"+val+"' draggable='true' ondragstart=\'drag(this, event)\'>"+val+"</li>");    // On ajoute les lettres restantes
+            $('#desordre ul').append("<li id='"+val+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val+"</li>");    // On ajoute les lettres restantes
         }
         nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
     });
@@ -59,11 +59,11 @@ function getOneRandomWord(){
     return data[Math.floor(Math.random()*data.length)]; // On mélange la liste
 }
 
-function drag(draggableitem, e) {
+function drag_mot(draggableitem, e) {
     e.dataTransfer.setData("lettre", $(draggableitem).attr('id'));
 }
 
-function drop(target, e) {
+function drop_mot(target, e) {
     var lettre = e.dataTransfer.getData('lettre');
     var target = $(target);
     if(target.attr('id')==lettre){
