@@ -25,9 +25,9 @@
 
 		<div data-role="content" class="content">	
 			<p align="center"><img src="./res/img/puzzle.png" alt="logo" /></p>
-				<a id="bouton-mots" data-role="button" href="#type-mots">Mots</a>
-				<a id="bouton-puzzle" data-role="button" href="#type-puzzle">Puzzles</a>
-				<a id="bouton-help" data-role="button" href="#type-help">Help</a>
+				<a id="bouton-mots" class="bouton-mots" data-role="button" href="#type-mots"><img src="./res/img/boutons/mots.png" alt="mots" style="position:relative; top:30%;" />MOTS</a>
+				<a id="bouton-puzzle" class="bouton-puzzle" data-role="button" href="#type-puzzle"><img src="./res/img/boutons/puzzle.png" alt="puzzle" style="position:relative; top:30%;" />PUZZLES</a>
+				<a id="bouton-help" class="bouton-help" data-role="button" href="#type-help"><img src="./res/img/boutons/aide.png" alt="aide" style="position:relative; top:30%;" />AIDE</a>
 		</div>
 	</div>
 
@@ -42,17 +42,15 @@
 	
 	<div id="type-mots" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">MOTS</p>
+			<p align="center" style="color: white;">CONSTRUIRE UN MOT</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
 		</div>
 
 		<div data-role="content" class="content">	
-			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-				<li data-role="list-divider" data-theme="c">Menu</li>
-				<li><a href="#mot-niveau-1" data-transition="flip">Facile</a></li>
-				<li><a href="#mot-niveau-2" data-transition="flip">Moyen</a></li>
-				<li><a href="#mot-niveau-3" data-transition="flip">Difficile</a></li>
-			</ul>
+			<a id="bouton-niveau-1" class="bouton-niveau-1" data-role="button" href="#mot-niveau-1"><img src="./res/img/boutons/mots.png" alt="mots-facile" style="position:relative; top:30%;" />FACILE</a>
+			<a id="bouton-niveau-2" class="bouton-niveau-2" data-role="button" href="#mot-niveau-2"><img src="./res/img/boutons/mots.png" alt="mots-moyen" style="position:relative; top:30%;" />MOYEN</a>
+			<a id="bouton-niveau-3" class="bouton-niveau-3" data-role="button" href="#mot-niveau-3"><img src="./res/img/boutons/mots.png" alt="mots-difficile" style="position:relative; top:30%;" />DIFFICILE</a>
+			
 		</div>
 
 		<div data-role="footer" data-theme="a">
@@ -108,12 +106,9 @@
 		</div>
 
 		<div data-role="content" class="content">	
-			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
-				<li data-role="list-divider" data-theme="c">Menu</li>
-				<li><a id="puzzle-facile" href="#puzzle-niveau1" data-transition="flip">Facile</a></li>
-				<li><a id="puzzle-moyen" href="#index" data-transition="flip">Moyen</a></li>
-				<li><a id="puzzle-difficile" href="#index" data-transition="flip">Difficile</a></li>
-			</ul>
+			<a id="puzzle-facile" class="puzzle-niveau-1" data-role="button" href="#puzzle-niveau1"><img src="./res/img/boutons/puzzle.png" alt="puzzle-facile" style="position:relative; top:30%;" />FACILE</a>
+			<a id="puzzle-moyen" class="puzzle-niveau-2" data-role="button" href="#puzzle-niveau2"><img src="./res/img/boutons/puzzle.png" alt="puzzle-moyen" style="position:relative; top:30%;" />MOYEN</a>
+			<a id="puzzle-difficile" class="puzzle-niveau-3" data-role="button" href="#puzzle-niveau3"><img src="./res/img/boutons/puzzle.png" alt="puzzle-difficile" style="position:relative; top:30%;" />DIFFICILE</a>
 		</div>
 
 		<div data-role="footer" data-theme="a">
