@@ -13,6 +13,10 @@
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
+
+	<!--************************************************************************************************************-->
+	<!-- 													Home Page												-->
+	<!--************************************************************************************************************-->
 	<div id="index" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white;">MOZZLE</p>
@@ -21,11 +25,44 @@
 
 		<div data-role="content" class="content">	
 			<p align="center"><img src="./res/img/puzzle.png" alt="logo" /></p>
-			<a id="bouton-mots" data-role="button" href="#type-mots">Mots</a>
-			<a id="bouton-puzzle" data-role="button" href="#type-puzzle">Puzzles</a>
-			<a id="bouton-help" data-role="button" href="#type-help">Help</a>
+				<a id="bouton-mots" data-role="button" href="#type-mots">Mots</a>
+				<a id="bouton-puzzle" data-role="button" href="#type-puzzle">Puzzles</a>
+				<a id="bouton-help" data-role="button" href="#type-help">Help</a>
 		</div>
 	</div>
+
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>	
+	
+	<!--************************************************************************************************************-->
+	<!-- 								Page des niveaux pour la construction des mots								-->
+	<!--************************************************************************************************************-->
+	
+	<div id="type-mots" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">MOTS</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+		</div>
+
+		<div data-role="content" class="content">	
+			<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f">
+				<li data-role="list-divider" data-theme="c">Menu</li>
+				<li><a href="#mot-niveau-1" data-transition="flip">Facile</a></li>
+				<li><a href="#mot-niveau-2" data-transition="flip">Moyen</a></li>
+				<li><a href="#mot-niveau-3" data-transition="flip">Difficile</a></li>
+			</ul>
+		</div>
+
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+	
+	<!--************************************************************************************************************-->
+	<!-- 								Page des niveaux pour les mots: niveau facile								-->
+	<!--************************************************************************************************************-->
 	<div id="mot-niveau-1" data-role="page">
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white;">MOTS</p>
@@ -58,6 +95,11 @@
 			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 								Page des niveaux pour le puzzle												-->
+	<!--************************************************************************************************************-->
+	
 	<div id="type-puzzle" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white;">PUZZLE</p>
@@ -78,50 +120,58 @@
 		</div>
 	</div>
 	
-		<!-- Puzzle Niveau 1 -->
+	<!--************************************************************************************************************-->
+	<!-- 								Page pour le puzzle: niveau facile											-->
+	<!--************************************************************************************************************-->
+
 	<div id="puzzle-niveau1" data-role="page" class="type-index">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">PUZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
-			</div>
-
-			<div data-role="content" class="content">	
-				 <h1>Drag and Drop Puzzle</h1>
-				<p>
-				Drag the puzzle pieces into the puzzle frame</p>
-				<div id="pieces">
-					<h2>Pieces</h2>
-				</div>
-				<div id="frameHolder">
-					<h2>Frame</h2>
-				    <div id="puzzle-frame">
-				        <div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place4" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place5" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place6" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place7" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place8" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place9" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place10" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place11" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place12" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				    </div>
-				</div>
-
-				<script src="drag-and-drop-puzzle.js">
-				</script>
-			</div>
-			
-			<div data-role="footer" data-theme="a">
-					<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-			</div>
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">PUZZLE</p>
+			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
 
+		<div data-role="content" class="content">	
+			 <h1>Drag and Drop Puzzle</h1>
+			<p>
+			Drag the puzzle pieces into the puzzle frame</p>
+			<div id="pieces">
+				<h2>Pieces</h2>
+			</div>
+			<div id="frameHolder">
+				<h2>Frame</h2>
+				<div id="puzzle-frame">
+					<div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place4" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place5" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place6" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place7" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place8" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place9" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place10" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place11" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place12" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				</div>
+			</div>
+
+			<script src="drag-and-drop-puzzle.js">
+			</script>
+		</div>
+			
+		<div data-role="footer" data-theme="a">
+				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 											Popup pour le bouton aide										-->
+	<!--************************************************************************************************************-->	
+		
 	<div data-role="popup" id="type-help" class="ui-content" style="max-width:280px">
 		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
 		<p>A completer avec la description des jeux.</p>
 	</div>
+	
 </body>
 </html>
