@@ -25,63 +25,188 @@ function afficheMorceauPuzzle(niveau, url)
 		morceauHeight = heightGlobale / 2;
 		morceauWidth = widthGlobale / 2;
 
-		var Myctn=document.getElementById("pieces2");
+		var Myctn=document.getElementById("pieces");
 
-		var monDiv = document.createElement('DIV');
-		monDiv.setAttribute("id", "piece1");
-		monDiv.className = 'divPuzzle';
-		monDiv.innerHTML = "";
-		monDiv.style.backgroundImage="url("+url+")";
-		monDiv.style.backgroundPosition='0% '+'0%';
-		monDiv.style.width = morceauWidth+"px";
-		monDiv.style.height = morceauHeight+"px";
-		monDiv.style.display = 'inline-block';
-		monDiv.setAttribute("draggable", "true");
+		for(i=1;i<=4;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
 
-		var monDiv2 = document.createElement('DIV');
-		monDiv2.setAttribute("id", "piece2");
-		monDiv2.className = 'divPuzzle';
-		monDiv2.innerHTML = "";
-		monDiv2.style.backgroundImage="url("+url+")";
-		monDiv2.style.backgroundPosition='100% '+ '0%';
-		monDiv2.style.width = morceauWidth+"px";
-		monDiv2.style.height = morceauHeight+"px";
-		monDiv2.style.display = 'inline-block';
-		monDiv2.setAttribute("draggable", "true");
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
 
-		var monDiv3 = document.createElement('DIV');
-		monDiv3.setAttribute("id", "piece3");
-		monDiv3.className = 'divPuzzle';
-		monDiv3.innerHTML = "";
-		monDiv3.style.backgroundImage="url("+url+")";
-		monDiv3.style.backgroundPosition='0% '+'100%';
-		monDiv3.style.width = morceauWidth+"px";
-		monDiv3.style.height = morceauHeight+"px";
-		monDiv3.style.display = 'inline-block';
-		monDiv3.setAttribute("draggable", "true");
-
-		var monDiv4 = document.createElement('DIV');
-		monDiv4.setAttribute("id", "piece4");
-		monDiv4.className = 'divPuzzle';
-		monDiv4.innerHTML = "";
-		monDiv4.style.backgroundImage="url("+url+")";
-		monDiv4.style.backgroundPosition='100% '+'100%';
-		monDiv4.style.width = morceauWidth+"px";
-		monDiv4.style.height = morceauHeight+"px";
-		monDiv4.style.display = 'inline-block';
-		monDiv4.setAttribute("draggable", "true");
-		
-		Myctn.appendChild(monDiv);
-		Myctn.appendChild(monDiv2);
-		Myctn.appendChild(monDiv3);
-		Myctn.appendChild(monDiv4);
+			Myctn.appendChild(monDiv);
+		}
 	}
 	else if(niveau == 2)
 	{
 
+		morceauHeight = heightGlobale / 3;
+		morceauWidth = widthGlobale / 3;
+
+		var Myctn=document.getElementById("pieces2");
+
+		for(i=1;i<=9;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
+
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '50% '+'0%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '50% '+'50%';
+			}
+			else if(i == 5)
+			{
+				monDiv.style.backgroundPosition = '50% '+'100%';
+			}
+			else if(i == 6)
+			{
+				monDiv.style.backgroundPosition = '0% '+'50%';
+			}
+			else if(i == 7)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 8)
+			{
+				monDiv.style.backgroundPosition = '100% '+'50%';
+			}
+			else if(i == 9)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
+
+			Myctn.appendChild(monDiv);
+		}
 	}
 	else if(niveau == 3)
 	{
+		morceauHeight = heightGlobale / 4;
+		morceauWidth = widthGlobale / 4;
 
+		var Myctn=document.getElementById("pieces3");
+
+		for(i=1;i<=16;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
+
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '0% '+'33%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '0% '+'66%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 5)
+			{
+				monDiv.style.backgroundPosition = '33% '+'0%';
+			}
+			else if(i == 6)
+			{
+				monDiv.style.backgroundPosition = '33% '+'33%';
+			}
+			else if(i == 7)
+			{
+				monDiv.style.backgroundPosition = '33% '+'66%';
+			}
+			else if(i == 8)
+			{
+				monDiv.style.backgroundPosition = '33% '+'100%';
+			}
+			else if(i == 9)
+			{
+				monDiv.style.backgroundPosition = '66% '+'0%';
+			}
+			else if(i == 10)
+			{
+				monDiv.style.backgroundPosition = '66% '+'33%';
+			}
+			else if(i == 11)
+			{
+				monDiv.style.backgroundPosition = '66% '+'66%';
+			}
+			else if(i == 12)
+			{
+				monDiv.style.backgroundPosition = '66% '+'100%';
+			}
+			else if(i == 13)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 14)
+			{
+				monDiv.style.backgroundPosition = '100% '+'33%';
+			}
+			else if(i == 15)
+			{
+				monDiv.style.backgroundPosition = '100% '+'66%';
+			}
+			else if(i == 16)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
+
+			Myctn.appendChild(monDiv);
+		}
 	}
 }
