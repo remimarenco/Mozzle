@@ -249,16 +249,21 @@ body{
 
 #puzzle-frame2 {
 	border: solid black 0.3em;
-	width: 40em;
-	height: 40em;
+	width:20em;
+	height: 20em;
 }
 
 #puzzle-frame2 > div {
-	width: 20em;
-	height: 20em;
+	width: 10em;
+	height: 10em;
 	float: left;
 }
-
+#place{
+	border: solid black 0.5px;
+}
+#piece{
+	border:solid black 0.5px;
+}
 
 /********************* page niveaux puzzles ************************/
 .puzzle-niveau-1{
