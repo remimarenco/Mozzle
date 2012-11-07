@@ -98,9 +98,8 @@ function resize() {
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie 
 function partieGagnee()
 {
-	alert('gagneeeeeee');
-	ajouterAuScore(10);
-	liresound ('res\audio\bruitagePuzzle\Fr-B.ogg');
+	$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+	$("#popupBasic2").popup("open");
 }
 
 //Function ajouterAuScore

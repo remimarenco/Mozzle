@@ -156,7 +156,7 @@ function drop_mot(target, e) {
     })
 
     if(lettreCorrecte == true){
-		$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+		//$('body').append("<audio autoplay><source src='C:\Users\Acer\Dropbox\Cour\CPE\Developpement Mobile\Mozzle\res\audio\bruitagePuzzle\Fr-B.odd' type='audio/ogg'></audio>");
 		//$('#illustration').prepend("<div data-role='popup' style:'position: fixed;z-index:2;'><img src='res/img/boutons/gagne.gif'/></div>");
 		$("#popupBasic").popup("open");
 
