@@ -26,7 +26,7 @@ body{
 }
 
 .font-white{
-	color:#eee;
+	color:#aaa;
 }
 
 .margin-bottom20{
@@ -130,44 +130,55 @@ body{
 
 /********************* Construire des mots ************************/
 
+.ordre{
+	width: 100%;
+}
+
+.desordre{
+	width: 100%;
+}
+
 .order{
-	width:500px;
-	margin: 0 auto;
+	width:50%;
+	margin: 0 25%;
 }
 
 .ordre li{
+	width: 2em;
+	height: 2em;
 	display:inline-block;
-	padding: 10px;
-	width: 70px;
-	border: solid 3px #9683EC;
-	margin: 0;
+	padding: 5px;
+	border: solid 2px #9683EC;
+	margin: 5px;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
-	font-size: 40px;
 	font-weight:bold;
 	position: relative;
 	text-align: center;
 }
 
 .desordre li{
+	width: 2em;
+	height: 2em;
 	display:inline-block;
-	padding: 10px;
-	width: 70px;
-	margin: 0;
+	padding: 5px;
+	margin: 5px;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
-	font-size: 40px;
 	font-weight:bold;
 	position: relative;
 	text-align: center;
 }
 
 .desorder{
-	width:500px;
-	margin: 0 auto;
+	width:50%;
+	margin: 0 25%;
 }
 
 .illustration{
 	position: relative;
 	text-align: center;
+}
+
+.case_vide{
 }
 
 /********************* page niveaux construire des mots ************************/
@@ -238,16 +249,21 @@ body{
 
 #puzzle-frame2 {
 	border: solid black 0.3em;
-	width: 40em;
-	height: 40em;
+	width:20em;
+	height: 20em;
 }
 
 #puzzle-frame2 > div {
-	width: 20em;
-	height: 20em;
+	width: 10em;
+	height: 10em;
 	float: left;
 }
-
+#place{
+	border: solid black 0.5px;
+}
+#piece{
+	border:solid black 0.5px;
+}
 
 /********************* page niveaux puzzles ************************/
 .puzzle-niveau-1{

@@ -10,6 +10,7 @@
 	<script src="js/lib/jquery-1.8.2.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/puzzleDecoupe.js"></script>
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
@@ -88,7 +89,7 @@
 				</ul>
 			</div>
 			<div class="clear"></div>
-			<div id="desordre">
+			<div class="desordre" id="desordre">
 				<ul class="desorder">
 					<!-- Contient les lettres dans le desordre -->
 				</ul>
@@ -130,51 +131,28 @@
 			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
 			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
-
-		<div data-role="content" class="content">	
-			<h1>Votre score:<div id='score'></div></h1>
-			<p>Drag the puzzle pieces into the puzzle frame</p>
-
-			<div id="frameHolder">
-				<h2>Frame</h2>
-				<div id="puzzle-frame2">
+		<div data-role="content" class="content">
+			<div id ='center' style='margin:0 auto;'>
+				<div id='top'>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score'></div></h1></div>
+					<div id='imageMiniature'style='display:block;float:left;'></div>
 				</div>
-			</div>
-			<div id="pieces">
-				<h2>Pieces</h2>
-			</div>
+				<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame2">
+					</div>
+				</div>
+				<div id="pieces">
+					<h2>Pieces</h2>
+				</div>
 
-			<script src="js/drag-and-drop-puzzle.js"></script>
+				<script src="js/drag-and-drop-puzzle.js"></script>
+			</div>
 		</div>
-		
 		<div data-role="footer" data-theme="a">
 			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 
-	<!--************************************************************************************************************-->
-	<!-- 								Page pour le puzzle: niveau moyen											-->
-	<!--************************************************************************************************************-->
-
-	<div id="puzzle-niveau2" data-role="page" class="type-index">
-		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">PUZZLE</p>
-			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
-		</div>
-
-		<div data-role="content" class="content">	
-			<div id="puzzle-frame" style="float: left; width: 320px; height: 320px; background-color: white; text-align: center;">
-				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 0%; "></div>
-				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 0%;"></div>
-				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 100%;"></div>
-				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 100%;"></div>
-			</div>  
-		</div>
-			
-		<div data-role="footer" data-theme="a">
-				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
-		</div>
-	</div>
-
+	
 </body>
 </html>
