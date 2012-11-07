@@ -53,6 +53,8 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
 
     // On ajoute notre element sur la page
     $('#illustration').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
+	// audio mot complet
+	$('#illustration').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
 });
 
 function getOneRandomWord(){
@@ -72,3 +74,4 @@ function drop_mot(target, e) {
     }
     nbDragAction--;     // On décrémente le nombre de drag restant
 }
+
