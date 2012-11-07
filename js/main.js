@@ -156,21 +156,25 @@ function drop_mot(target, e) {
     })
 
     if(lettreCorrecte == true){
-		//$('body').append("<audio autoplay><source src='C:\Users\Acer\Dropbox\Cour\CPE\Developpement Mobile\Mozzle\res\audio\bruitagePuzzle\Fr-B.odd' type='audio/ogg'></audio>");
-		//$('#illustration').prepend("<div data-role='popup' style:'position: fixed;z-index:2;'><img src='res/img/boutons/gagne.gif'/></div>");
-		$("#popupBasic").popup("open");
+		// Son du mot
+		$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+		var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
+		setTimeout("$('#popupGagne').popup('close');", 5000);
+        
 
-        // Son du mot
         // On incremente le score
         // On sauvegarde le score au local storage
         // On recharge la page
-        location.reload();
+		setTimeout(function(){location.reload();}, 6000);
 
     }
     
     nbDragAction--;     // On décrémente le nombre de drag restant
     if(nbDragAction==0){
-        //alert('Perdu '); // TODO a changer par une popup p-e
         // Jouer son perdu
+		$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
+		$("#popupPerdu").popup("open");
+		setTimeout("$('#popupPerdu').popup('close');", 5000);
+		setTimeout(function(){location.reload();}, 6000);
     }
 }
