@@ -136,11 +136,12 @@ body{
 
 .desordre{
 	width: 100%;
+	margin: 0 15%;
 }
 
 .order{
 	width:50%;
-	margin: 0 25%;
+	margin: 0 35%;
 }
 
 .ordre li{
@@ -244,7 +245,6 @@ body{
 .illustration img{
 	width: 20%;
 	height: 20%;	
-
 }
 
 #puzzle-frame2 {

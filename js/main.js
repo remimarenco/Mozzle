@@ -14,13 +14,13 @@ function onDeviceReady(){
 
 // TODO a wrap dans un module javascript
 var nbDragAction = 1;   // Nombre de fois que l'on peux jouer (autant que de lettre + 1)
-
+var word = '';
 // TODO Declenchement du jeu de mot niveau i avec controle de la difficulté dans la fonction
 // Déclenchement du jeu mot niveau 1
 $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     
     // On choisie un mot aléatoirement
-    var word = getOneRandomWord();
+    word = getOneRandomWord();
     var wordLength = word['libelle'].length;
     
     var nbFirstLetter = Math.floor(wordLength / 3);     // On récupère un nombre de lettre a afficher suivant la taille du mot
@@ -51,7 +51,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // On ajoute notre element sur la page
     $('#illustration').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
 	// audio mot complet
-	$('#illustration').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+	//$('#illustration').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
 });
 
 function getOneRandomWord(){
@@ -92,7 +92,9 @@ function drop_mot(target, e) {
     })
 
     if(lettreCorrecte == true){
-        alert('win'); // TODO Anim et son ,...
+		$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+		//$('#illustration').prepend("<div data-role='popup' style:'position: fixed;z-index:2;'><img src='res/img/boutons/gagne.gif'/></div>");
+		$("#popupBasic").popup("open");
     }
     
     nbDragAction--;     // On décrémente le nombre de drag restant
