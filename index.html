@@ -10,6 +10,7 @@
 	<script src="js/lib/jquery-1.8.2.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/puzzleDecoupe.js"></script>
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
@@ -167,12 +168,24 @@
 		</div>
 
 		<div data-role="content" class="content">	
-			<div id="puzzle-frame" style="float: left; width: 320px; height: 320px; background-color: white; text-align: center;">
-				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 0%; "></div>
-				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 0%;"></div>
-				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 100%;"></div>
-				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 100%;"></div>
-			</div>  
+			<div id="puzzle-frame" style="background-color: white; text-align: center;">
+				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 0%; "></div>
+				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 0%;"></div>
+				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 100%;"></div>
+				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 100%;"></div>
+			</div>
+
+			<div id="pieces2">
+				<h2>Pieces</h2>
+			</div>
+			
+
+			<script src="js/puzzleDecoupe.js" type="text/javascript"></script>
+			<script>
+				var niveau = 1;
+				var url = "res/img/animaux/animalPuzzle/animal1.png";
+				createPuzzle(niveau, url);
+			</script>
 		</div>
 			
 		<div data-role="footer" data-theme="a">
