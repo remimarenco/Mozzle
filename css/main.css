@@ -108,6 +108,11 @@ body{
 	margin-top:10px;
 }
 
+#ordre ul li, #desordre ul li {
+	float: left;
+	list-style-type: none;
+}
+
 .bouton-mots .ui-btn-text{
 	color:red;
 	font-size: 20px;
