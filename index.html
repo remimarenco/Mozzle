@@ -19,18 +19,26 @@
 	<!--************************************************************************************************************-->
 	<div id="index" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">MOZZLE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">M O Z Z L E</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
 		</div>
 
 		<div data-role="content" class="content">	
 			<p align="center"><img src="./res/img/puzzle.png" alt="logo" /></p>
-				<a id="bouton-mots" class="bouton-mots" data-role="button" href="#type-mots"><img src="./res/img/boutons/mots.png" alt="mots" style="position:relative; top:30%;" />MOTS</a>
-				<a id="bouton-puzzle" class="bouton-puzzle" data-role="button" href="#type-puzzle"><img src="./res/img/boutons/puzzle.png" alt="puzzle" style="position:relative; top:30%;" />PUZZLES</a>
-				<a id="bouton-help" class="bouton-help" data-role="button" href="#type-help"><img src="./res/img/boutons/aide.png" alt="aide" style="position:relative; top:30%;" />AIDE</a>
+			<a id="bouton-mots" class="bouton-mots" data-role="button" href="#type-mots"><img src="./res/img/boutons/mots.png" alt="mots" style="position:relative; top:30%;" />MOTS</a>
+			<a id="bouton-puzzle" class="bouton-puzzle" data-role="button" href="#type-puzzle"><img src="./res/img/boutons/puzzle.png" alt="puzzle" style="position:relative; top:30%;" />PUZZLES</a>
+			<a id="bouton-help" class="bouton-help" data-role="button" href="#type-help" data-rel="popup"><img src="./res/img/boutons/aide.png" alt="aide" style="position:relative; top:30%;" />AIDE</a>
+			<div data-role="popup" id="type-help"  style="max-width:280px; font-family:Comic Sans MS;">
+				<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+				<p style="font-weight:bold;">Construire un mot :</p>
+				<p>Le but du jeu est de placer les lettres pour former les mots illustr&eacute;s.</p><br/>
+				<p style="font-weight:bold;">Puzzle:</p>
+				<p>Le but du jeu consiste &agrave; reconstituer une image &agrave; l'aide de pi&egrave;ces fournies qui s'embo&icirc;tent les unes dans les autres.</p>
+			</div>
 		</div>
+
 		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>	
 	
@@ -40,7 +48,7 @@
 	
 	<div id="type-mots" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">CONSTRUIRE UN MOT</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
 		</div>
 
@@ -52,17 +60,25 @@
 		</div>
 
 		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 	
 	<!--************************************************************************************************************-->
 	<!-- 								Page des niveaux pour les mots: niveau facile								-->
 	<!--************************************************************************************************************-->
+	
 	<div id="mot-niveau-1" data-role="page">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">MOTS</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
+				</ul>
+			</div><!-- /navbar -->
 		</div>
 		<div data-theme="d" data-role="content">
 			<div class="illustration" id="illustration"></div>
@@ -80,7 +96,7 @@
 		</div>
 		<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
 		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 
@@ -90,7 +106,7 @@
 	
 	<div id="type-puzzle" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">PUZZLE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE</p>
 			<a href="#index" data-icon="home" data-iconpos="notext" >Home</a>
 		</div>
 
@@ -101,7 +117,7 @@
 		</div>
 
 		<div data-role="footer" data-theme="a">
-			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 	
@@ -110,45 +126,59 @@
 	<!-- 								Page pour le puzzle: niveau facile											-->
 	<!--************************************************************************************************************-->
 	<div id="puzzle-niveau1" data-role="page" class="type-index">
-			<div data-role="header" data-theme="a">
-				<p align="center" style="color: white;">PUZZLE</p>
-				<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
+			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+		</div>
+
+		<div data-role="content" class="content">	
+			<h1>Drag and Drop Puzzle</h1>
+			<p>Drag the puzzle pieces into the puzzle frame</p>
+
+			<div id="frameHolder">
+				<h2>Frame</h2>
+				<div id="puzzle-frame2">
+					<div id="place0" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+					<div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+				</div>
+			</div>
+			<div id="pieces">
+				<h2>Pieces</h2>
 			</div>
 
-			<div data-role="content" class="content">	
-				 <h1>Drag and Drop Puzzle</h1>
-				<p>
-				Drag the puzzle pieces into the puzzle frame</p>
-
-				<div id="frameHolder">
-					<h2>Frame</h2>
-				    <div id="puzzle-frame2">
-				        <div id="place0" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				        <div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-				    </div>
-				</div>
-				<div id="pieces">
-					<h2>Pieces</h2>
-				</div>
-
-				<script src="drag-and-drop-puzzle.js">
-				</script>
+			<script src="js/drag-and-drop-puzzle.js"></script>
+		</div>
+		
+		<div data-role="footer" data-theme="a">
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
 	</div>
-
-
-	
-
 
 	<!--************************************************************************************************************-->
-	<!-- 											Popup pour le bouton aide										-->
-	<!--************************************************************************************************************-->	
-		
-	<div data-role="popup" id="type-help" class="ui-content" style="max-width:280px">
-		<a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
-		<p>A completer avec la description des jeux.</p>
+	<!-- 								Page pour le puzzle: niveau moyen											-->
+	<!--************************************************************************************************************-->
+
+	<div id="puzzle-niveau2" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">PUZZLE</p>
+			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+		</div>
+
+		<div data-role="content" class="content">	
+			<div id="puzzle-frame" style="float: left; width: 320px; height: 320px; background-color: white; text-align: center;">
+				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 0%; "></div>
+				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 0%;"></div>
+				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 100%;"></div>
+				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 100%;"></div>
+			</div>  
+		</div>
+			
+		<div data-role="footer" data-theme="a">
+				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
 	</div>
-	
+
 </body>
 </html>
