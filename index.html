@@ -10,8 +10,8 @@
 	<script src="js/lib/jquery-1.8.2.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/puzzleDecoupe.js"></script>
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/drag-and-drop-puzzle.js"></script>
 </head>
 <body>
 
@@ -195,74 +195,71 @@
 		</div>
 	</div>
 	
-
 	<!--************************************************************************************************************-->
 	<!-- 								Page pour le puzzle: niveau facile											-->
-	<!--************************************************************************************************************-->
+	<!--************************************************************************************************************-->*
 	<div id="puzzle-niveau1" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
 			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
-
-		<div data-role="content" class="content">	
-			<h1>Drag and Drop Puzzle</h1>
-			<p>Drag the puzzle pieces into the puzzle frame</p>
-
-			<div id="frameHolder">
-				<h2>Frame</h2>
-				<div id="puzzle-frame2">
-					<div id="place0" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place1" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place2" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
-					<div id="place3" ondrop="drop(this, event);" ondragenter="return false;" ondragover="return false;"></div>
+		<div data-role="content" class="content">
+			<div id ='center' style='margin:0 auto;'>
+				<div id='top'>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score'></div></h1></div>
+					<div id='imageMiniature'style='display:block;float:left;'></div>
 				</div>
-			</div>
-			<div id="pieces">
-				<h2>Pieces</h2>
-			</div>
+				<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame">
+					</div>
+				</div>
+				<div id="pieces1">
+					<h2>Pieces</h2>
+				</div>
 
-			<script src="js/drag-and-drop-puzzle.js"></script>
+				<script>
+					var niveau = 1;
+					var url = "res/img/animaux/animalPuzzle/animal1.png";
+					createPuzzle(niveau, url);
+				</script>
+			</div>
 		</div>
-		
 		<div data-role="footer" data-theme="a">
-			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 
 	<!--************************************************************************************************************-->
 	<!-- 								Page pour le puzzle: niveau moyen											-->
 	<!--************************************************************************************************************-->
-
 	<div id="puzzle-niveau2" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">PUZZLE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
 			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
+		<div data-role="content" class="content">
+			<div id ='center' style='margin:0 auto;'>
+				<div id='top'>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score'></div></h1></div>
+					<div id='imageMiniature'style='display:block;float:left;'></div>
+				</div>
+				<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame">
+					</div>
+				</div>
+				<div id="pieces2">
+					<h2>Pieces</h2>
+				</div>
 
-		<div data-role="content" class="content">	
-			<div id="puzzle-frame" style="background-color: white; text-align: center;">
-				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 0%; "></div>
-				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 0%;"></div>
-				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 100%;"></div>
-				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 100%;"></div>
+				<script>
+					var niveau = 2;
+					var url = "res/img/animaux/animalPuzzle/animal1.png";
+					createPuzzle(niveau, url);
+				</script>
 			</div>
-
-			<div id="pieces2">
-				<h2>Pieces</h2>
-			</div>
-			
-
-			<script src="js/puzzleDecoupe.js" type="text/javascript"></script>
-			<script>
-				var niveau = 2;
-				var url = "res/img/animaux/animalPuzzle/animal1.png";
-				createPuzzle(niveau, url);
-			</script>
 		</div>
-			
 		<div data-role="footer" data-theme="a">
-				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
 	</div>
 
@@ -283,24 +280,24 @@
 				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 100%;"></div>
 				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 100%;"></div>
 			</div>
+			<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame">
+					</div>
+			</div>
 
 			<div id="pieces3">
 				<h2>Pieces</h2>
 			</div>
 			
-
-			<script src="js/puzzleDecoupe.js" type="text/javascript"></script>
 			<script>
 				var niveau = 3;
 				var url = "res/img/animaux/animalPuzzle/animal1.png";
 				createPuzzle(niveau, url);
 			</script>
 		</div>
-			
 		<div data-role="footer" data-theme="a">
-				<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
-	</div>
-
+	</div>	
 </body>
 </html>
