@@ -114,7 +114,7 @@ body{
 }
 
 .bouton-puzzle .ui-btn-text{
-	color:orange;
+	color:#702963;
 	font-size: 20px;
 }
 
@@ -208,11 +208,6 @@ body{
 
 /********************* Puzzle ************************/
 
-
-#puzzle-facile{
-	background: #0B59D5;
-}
-
 #puzzle-frame {
 	border: solid black 0.3em;
 	width: 60em;
@@ -250,14 +245,14 @@ body{
 
 
 /********************* page niveaux puzzles ************************/
-.bouton-niveau-1{
+.puzzle-niveau-1{
 	background: #12C415;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
 	width:250px;  
 	margin:auto;
 }
 
-.bouton-niveau-2{
+.puzzle-niveau-2{
 	background: #0B59D5;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
 	width:250px;  
@@ -265,7 +260,7 @@ body{
 	margin-top:10px;
 }
 
-.bouton-niveau-3{
+.puzzle-niveau-3{
 	background: #CA0000;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
 	width:250px;  
@@ -274,17 +269,17 @@ body{
 	margin-top:10px;
 }
 
-.bouton-niveau-1 .ui-btn-text{
+.puzzle-niveau-1 .ui-btn-text{
 	color:#702963;
 	font-size: 20px;
 }
 
-.bouton-niveau-2 .ui-btn-text{
+.puzzle-niveau-2 .ui-btn-text{
 	color:red;
 	font-size: 20px;
 }
 
-.bouton-niveau-3 .ui-btn-text{
+.puzzle-niveau-3 .ui-btn-text{
 	color:blue;
 	font-size: 20px;
 }
