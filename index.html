@@ -10,6 +10,7 @@
 	<script src="js/lib/jquery-1.8.2.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/puzzleDecoupe.js"></script>
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
 </head>
 <body>
@@ -83,13 +84,83 @@
 		<div data-theme="d" data-role="content">
 			<div class="illustration" id="illustration"></div>
 			<div class="ordre" id="ordre">
-				<ul class="order">
+				<ul id="order" class="order">
 					<!-- Contient le mot dans l'ordre -->
 				</ul>
 			</div>
 			<div class="clear"></div>
 			<div class="desordre" id="desordre">
-				<ul class="desorder">
+				<ul id="desorder" class="desorder">
+					<!-- Contient les lettres dans le desordre -->
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="a">
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 								Page des niveaux pour les mots: niveau moyen								-->
+	<!--************************************************************************************************************-->
+	
+	<div id="mot-niveau-2" data-role="page">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<div data-theme="d" data-role="content">
+			<div class="illustration" id="illustration2"></div>
+			<div class="ordre" id="ordre2">
+				<ul id="order2" class="order">
+					<!-- Contient le mot dans l'ordre -->
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="desordre" id="desordre2">
+				<ul id="desorder2" class="desorder">
+					<!-- Contient les lettres dans le desordre -->
+				</ul>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="a">
+			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 								Page des niveaux pour les mots: niveau Difficile								-->
+	<!--************************************************************************************************************-->
+	
+	<div id="mot-niveau-3" data-role="page">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
+			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
+					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
+				</ul>
+			</div><!-- /navbar -->
+		</div>
+		<div data-theme="d" data-role="content">
+			<div class="illustration" id="illustration3"></div>
+			<div class="ordre" id="ordre3">
+				<ul id="order3" class="order">
+					<!-- Contient le mot dans l'ordre -->
+				</ul>
+			</div>
+			<div class="clear"></div>
+			<div class="desordre" id="desordre3">
+				<ul id="desorder3" class="desorder">
 					<!-- Contient les lettres dans le desordre -->
 				</ul>
 			</div>
@@ -98,7 +169,6 @@
 			</div>
 			
 		</div>
-		<a data-role="button" href="#mot-niveau-1">Mot suivant</a><!-- Penser a mettre un changement automatique de page-->
 		<div data-role="footer" data-theme="a">
 			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
@@ -171,12 +241,24 @@
 		</div>
 
 		<div data-role="content" class="content">	
-			<div id="puzzle-frame" style="float: left; width: 320px; height: 320px; background-color: white; text-align: center;">
-				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 0%; "></div>
-				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 0%;"></div>
-				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 0% 100%;"></div>
-				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal10.png); background-position: 100% 100%;"></div>
-			</div>  
+			<div id="puzzle-frame" style="background-color: white; text-align: center;">
+				<div id="div1" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 0%; "></div>
+				<div id="div2" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 0%;"></div>
+				<div id="div3" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 0% 100%;"></div>
+				<div id="div4" style="width: 160px; height: 160px; background-image: url(res/img/animaux/animal9.png); background-position: 100% 100%;"></div>
+			</div>
+
+			<div id="pieces2">
+				<h2>Pieces</h2>
+			</div>
+			
+
+			<script src="js/puzzleDecoupe.js" type="text/javascript"></script>
+			<script>
+				var niveau = 1;
+				var url = "res/img/animaux/animalPuzzle/animal1.png";
+				createPuzzle(niveau, url);
+			</script>
 		</div>
 			
 		<div data-role="footer" data-theme="a">
