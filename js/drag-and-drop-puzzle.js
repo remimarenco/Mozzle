@@ -147,11 +147,11 @@ function resize() {
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie 
 function partieGagnee()
 {
-	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
 	
 	//on ouvre une popup lorsque
 	var myVar=setTimeout(function(){$("#popupGagne"+sessionStorage.getItem("niveau")).popup("open");},1500);
-	setTimeout("$('#popupGagne'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
+	$('body').append("<audio autoplay><source src='res/audio/animaux/Fr-chat.ogg' type='audio/ogg'></audio>");
+	//setTimeout("$('#popupGagne"+sessionStorage.getItem('niveau')+"').popup('close');", 5000);
 
 	// On ajoute un score en fonction du niveau
 	var niveau = sessionStorage.getItem("niveau");
@@ -175,8 +175,8 @@ function partiePerdue()
 {
 	$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
 	$("#popupPerdu"+sessionStorage.getItem("niveau")).popup("open");
-	setTimeout("$('#popupPerdu'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
-	setTimeout(function(){location.reload();}, 6000);
+	//setTimeout("$('#popupPerdu"+sessionStorage.getItem('niveau')+"').popup('close');", 5000);
+	//setTimeout(function(){location.reload();}, 6000);
 	var niveau = sessionStorage.getItem("niveau");
 	if(niveau == 3)
 	{
