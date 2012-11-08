@@ -74,6 +74,10 @@ function drop(target, e) {
 	{
 		target.appendChild(document.getElementById(id));
 
+		// On supprime les bordures autour de l'élément
+		var maPiece = document.getElementById(id);
+		maPiece.style.border = "none";
+
 		//on indique que cet emplacement est correctement remplit
 		sessionStorage.setItem(target.id,1);
 	}
@@ -248,8 +252,6 @@ function createPuzzle(niveau, url)
 
 	myCtn.style.height = heightGlobale + "px";
 	myCtn.style.width = widthGlobale + "px";
-
-	var morceauPuzzle = document.createElement('DIV');
 	
 	afficheMorceauPuzzle(niveau, url);
 
@@ -341,8 +343,6 @@ function afficheMorceauPuzzle(niveau, url)
 	}
 	else if(niveau == 2)
 	{
-
-
 		morceauHeight = heightGlobale / 3;
 		morceauWidth = widthGlobale / 3;
 				
