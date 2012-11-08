@@ -56,7 +56,6 @@ function drop(target, e) {
 
 	//on recupere dans le local storage la place de depart de la piece
 	var placeOfPiece = sessionStorage.getItem(id);
-	alert("id "+id+" "+placeOfPiece +" "+target.id);
 
 	//on compare la place de la piece et la place ou elle doit etre deplacée
 	if (placeOfPiece==target.id)
@@ -348,63 +347,77 @@ function afficheMorceauPuzzle(niveau, url)
 			else if(i == 2)
 			{
 				monDiv.style.backgroundPosition = '0% '+'33%';
-				
+				sessionStorage.setItem("piece"+i,"place5");				
 			}
 			else if(i == 3)
 			{
 				monDiv.style.backgroundPosition = '0% '+'66%';
+				sessionStorage.setItem("piece"+i,"place9");
 			}
 			else if(i == 4)
 			{
 				monDiv.style.backgroundPosition = '0% '+'100%';
+				sessionStorage.setItem("piece"+i,"place13");
 			}
 			else if(i == 5)
 			{
 				monDiv.style.backgroundPosition = '33% '+'0%';
+				sessionStorage.setItem("piece"+i,"place2");
 			}
 			else if(i == 6)
 			{
 				monDiv.style.backgroundPosition = '33% '+'33%';
+				sessionStorage.setItem("piece"+i,"place6");
 			}
 			else if(i == 7)
 			{
 				monDiv.style.backgroundPosition = '33% '+'66%';
+				sessionStorage.setItem("piece"+i,"place10");
 			}
 			else if(i == 8)
 			{
 				monDiv.style.backgroundPosition = '33% '+'100%';
+				sessionStorage.setItem("piece"+i,"place14");
 			}
 			else if(i == 9)
 			{
 				monDiv.style.backgroundPosition = '66% '+'0%';
+				sessionStorage.setItem("piece"+i,"place3");
 			}
 			else if(i == 10)
 			{
 				monDiv.style.backgroundPosition = '66% '+'33%';
+				sessionStorage.setItem("piece"+i,"place7");
 			}
 			else if(i == 11)
 			{
 				monDiv.style.backgroundPosition = '66% '+'66%';
+				sessionStorage.setItem("piece"+i,"place11");
 			}
 			else if(i == 12)
 			{
 				monDiv.style.backgroundPosition = '66% '+'100%';
+				sessionStorage.setItem("piece"+i,"place15");
 			}
 			else if(i == 13)
 			{
 				monDiv.style.backgroundPosition = '100% '+'0%';
+				sessionStorage.setItem("piece"+i,"place4");
 			}
 			else if(i == 14)
 			{
 				monDiv.style.backgroundPosition = '100% '+'33%';
+				sessionStorage.setItem("piece"+i,"place8");
 			}
 			else if(i == 15)
 			{
 				monDiv.style.backgroundPosition = '100% '+'66%';
+				sessionStorage.setItem("piece"+i,"place12");
 			}
 			else if(i == 16)
 			{
 				monDiv.style.backgroundPosition = '100% '+'100%';
+				sessionStorage.setItem("piece"+i,"place16");
 			}
 			
 			monDiv.style.width = morceauWidth+"px";
@@ -414,7 +427,6 @@ function afficheMorceauPuzzle(niveau, url)
 			monDiv.style.marginRight = '3px';
 			monDiv.style.border = 'solid black 3px';
 			monDiv.setAttribute("margin-right", "3px");
-			sessionStorage.setItem("piece"+i,"place"+i);
 			
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
