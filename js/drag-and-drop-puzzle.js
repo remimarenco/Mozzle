@@ -173,26 +173,18 @@ function partieGagnee()
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie perdue
 function partiePerdue()
 {
-<<<<<<< HEAD
 	$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
 	$("#popupPerdu"+sessionStorage.getItem("niveau")).popup("open");
 	setTimeout("$('#popupPerdu'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
 	setTimeout(function(){location.reload();}, 6000);
-=======
-	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
-	//var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
-	//setTimeout("$('#popupGagne').popup('close');", 5000);
-	alert("perdueee");
-
 	var niveau = sessionStorage.getItem("niveau");
-
 	if(niveau == 3)
 	{
 		ajouterAuScore(-10);
 	}
 	
 	afficherScore();
->>>>>>> faa78f47a71b254c5ccdde0eeafccf8c082e2abb
+
 }
 
 //Function ajouterAuScore
