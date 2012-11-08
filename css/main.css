@@ -222,6 +222,12 @@ body{
 	font-size: 20px;
 }
 
+.score{
+	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
+	font-size: 24px;
+	width: 250px;
+	margin: 10px auto;	
+}
 
 /********************* Puzzle ************************/
 

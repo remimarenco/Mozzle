@@ -173,10 +173,26 @@ function partieGagnee()
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie perdue
 function partiePerdue()
 {
+<<<<<<< HEAD
 	$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
 	$("#popupPerdu"+sessionStorage.getItem("niveau")).popup("open");
 	setTimeout("$('#popupPerdu'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
 	setTimeout(function(){location.reload();}, 6000);
+=======
+	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+	//var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
+	//setTimeout("$('#popupGagne').popup('close');", 5000);
+	alert("perdueee");
+
+	var niveau = sessionStorage.getItem("niveau");
+
+	if(niveau == 3)
+	{
+		ajouterAuScore(-10);
+	}
+	
+	afficherScore();
+>>>>>>> faa78f47a71b254c5ccdde0eeafccf8c082e2abb
 }
 
 //Function ajouterAuScore
@@ -190,6 +206,12 @@ function ajouterAuScore(scoreAAjouter)
 	}
 	//ajoute le nouveau score au precedent et on le stocke
 	var nouveauScore= parseInt(sessionStorage.getItem("score"))+parseInt(scoreAAjouter);
+
+	if(nouveauScore < 0)
+	{
+		nouveauScore = 0;
+	}
+
 	sessionStorage.setItem("score",nouveauScore);
 	
 	afficherScore();
@@ -246,11 +268,12 @@ function afficheMorceauPuzzle(niveau, url)
 {
 	var morceauWidth;
 	var morceauHeight;
-
+	var Myctn;
+	// On créé un tableau dans lequel on va stocker les div
+	var MonTableau = new Array();
 
 	if(niveau == 1)
 	{
-
 		morceauHeight = heightGlobale / 2;
 		morceauWidth = widthGlobale / 2;
 		
@@ -259,7 +282,7 @@ function afficheMorceauPuzzle(niveau, url)
 			place.style.height = morceauHeight+"px";
 			place.style.width = morceauWidth+"px";
 		}
-		var Myctn=document.getElementById("pieces1");
+		Myctn=document.getElementById("pieces1");
 
 		for(i=1;i<=4;i++)
 		{
@@ -296,7 +319,17 @@ function afficheMorceauPuzzle(niveau, url)
 			sessionStorage.setItem("piece"+i,"place"+i);
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*4);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*4);
+			}
+			MonTableau[indice] = monDiv;	
+		}
+
+		for(i=0;i<4;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 	else if(niveau == 2)
@@ -312,7 +345,7 @@ function afficheMorceauPuzzle(niveau, url)
 			place.style.width = morceauWidth+"px";
 		}
 
-		var Myctn=document.getElementById("pieces2");
+		Myctn=document.getElementById("pieces2");
 
 		for(i=1;i<=9;i++)
 		{
@@ -377,14 +410,24 @@ function afficheMorceauPuzzle(niveau, url)
 			monDiv.setAttribute("margin-right", "3px");
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*9);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*9);
+			}
+			MonTableau[indice] = monDiv;
+		}
+
+		for(i=0;i<9;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 	else if(niveau == 3)
 	{
 
 
-		var Myctn=document.getElementById("pieces3");
+		Myctn=document.getElementById("pieces3");
 		
 		morceauHeight = heightGlobale / 4;
 		morceauWidth = widthGlobale / 4;
@@ -494,7 +537,17 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*16);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*16);
+			}
+			MonTableau[indice] = monDiv;
+		}
+
+		for(i=0;i<16;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 } 
