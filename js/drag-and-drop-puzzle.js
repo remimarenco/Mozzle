@@ -51,7 +51,7 @@ function initialisation(niveau,nombrePiece) {
 
 	//des places dans le puzzle frame
 	for (i=1; i<=nombrePiece; i++) {
-		$('#puzzle-frame'+niveau).append("<div id=\"place"+i+"\"  ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
+		$('#puzzle-frame'+niveau).append("<div id=\"place"+i+"\" ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
 	}
 	
 	var url = "res/img/animaux/animalPuzzle/animal1.png";
@@ -63,6 +63,7 @@ function initialisation(niveau,nombrePiece) {
 function drag(draggableitem, e) {
 	e.dataTransfer.setData("Text", draggableitem.id);	
 }
+
 function drop(target, e) {
 	var id = e.dataTransfer.getData('Text');
 
@@ -320,9 +321,10 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.style.width = morceauWidth+"px";
 			monDiv.style.height = morceauHeight+"px";
-			monDiv.style.display = 'inline-block';
+			//monDiv.style.display = 'inline-block';
 			monDiv.setAttribute("draggable", "true");
-			monDiv.style.marginRight = '3px';
+			monDiv.style.margin = 'auto';
+			monDiv.style.marginBottom = '3px';
 			monDiv.style.border = 'solid black 3px';
 			monDiv.setAttribute("margin-right", "3px");
 			sessionStorage.setItem("piece"+i,"place"+i);
