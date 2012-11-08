@@ -1,8 +1,8 @@
 // JavaScript Document
 // check for drag and drop support
 
-	var widthGlobale = 320;
-	var heightGlobale = 320;
+var widthGlobale = 320;
+var heightGlobale = 320;
 
 $( '#puzzle-niveau1' ).live( 'pageshow',function(event){
 	var niveau=1;
@@ -19,6 +19,7 @@ $( '#puzzle-niveau3' ).live( 'pageshow',function(event){
 	var nombrePiece=16;
 	initialisation(niveau,nombrePiece);
 });
+
 function initialisation(niveau,nombrePiece) {
 
 	var iOS = !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
@@ -34,6 +35,7 @@ function initialisation(niveau,nombrePiece) {
 		sessionStorage.setItem("essaisRestants",10);
 		afficherEssais();
 	}
+
 
 	//on initialisele tableau contenant l'etat des places
 	for (i=1; i<=nombrePiece; i++) {
@@ -51,7 +53,6 @@ function initialisation(niveau,nombrePiece) {
 	
 	var url = "res/img/animaux/animalPuzzle/animal1.png";
 	createPuzzle(niveau, url);
-	
 	afficherScore();
 	 //resize();
 }
@@ -64,7 +65,6 @@ function drop(target, e) {
 
 	//on recupere dans le local storage la place de depart de la piece
 	var placeOfPiece = sessionStorage.getItem(id);
-	alert("id "+id+" "+placeOfPiece +" "+target.id);
 
 	//on compare la place de la piece et la place ou elle doit etre deplacée
 	if (placeOfPiece==target.id)
@@ -74,7 +74,6 @@ function drop(target, e) {
 		//on indique que cet emplacement est correctement remplit
 		sessionStorage.setItem(target.id,1);
 	}
-
 
 	e.preventDefault();
 	//on parcourt le local storage de toute les places pour verifier si la partie n'est pas finie
@@ -150,6 +149,21 @@ function partieGagnee()
 	var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
 	setTimeout("$('#popupGagne').popup('close');", 5000);
 	//alert("gagner");
+
+	// On ajoute un score en fonction du niveau
+	var niveau = sessionStorage.getItem("niveau");
+	if(niveau == 1)
+	{
+		ajouterAuScore(10);
+	}
+	else if(niveau == 2)
+	{
+		ajouterAuScore(20);
+	}
+	else if(niveau == 3)
+	{
+		ajouterAuScore(30);
+	}
 }
 
 //Function partiePerdue
@@ -187,6 +201,8 @@ function afficherScore()
 	{
 		sessionStorage.setItem("score",0);
 	}
+
+	console.log("On affiche le score : "+sessionStorage.getItem("score"));
 	
 
 	//on recupere dans le score et on l'insere dans la div prévue
@@ -198,25 +214,26 @@ function afficherScore()
 function afficherEssais()
 {
 	console.log("essaisRestatnts"+sessionStorage.getItem("essaisRestants"));
-	//on recupere dans le score et on l'insere dans la div prévue
+	//on recupere dans le score et on l'insere dans la div prévues
 	$('#essaisRestants'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("essaisRestants"));
 }
 
 function liresound (soundFile) { 
- var audio;
- audio = new Audio(soundFile);
- audio.play();
+	var audio;
+	audio = new Audio(soundFile);
+	audio.play();
 }
 
 function createPuzzle(niveau, url)
 {
+	// On stocke le niveau dans le local storage
+	sessionStorage.setItem("niveau",niveau);
+
 	// Récupération de l'élément qui va contenir la div
 	var myCtn=document.getElementById("puzzle-frame"+niveau);
 
 	myCtn.style.height = heightGlobale + "px";
 	myCtn.style.width = widthGlobale + "px";
-
-	
 
 	var morceauPuzzle = document.createElement('DIV');
 	
@@ -392,63 +409,77 @@ function afficheMorceauPuzzle(niveau, url)
 			else if(i == 2)
 			{
 				monDiv.style.backgroundPosition = '0% '+'33%';
-				
+				sessionStorage.setItem("piece"+i,"place5");				
 			}
 			else if(i == 3)
 			{
 				monDiv.style.backgroundPosition = '0% '+'66%';
+				sessionStorage.setItem("piece"+i,"place9");
 			}
 			else if(i == 4)
 			{
 				monDiv.style.backgroundPosition = '0% '+'100%';
+				sessionStorage.setItem("piece"+i,"place13");
 			}
 			else if(i == 5)
 			{
 				monDiv.style.backgroundPosition = '33% '+'0%';
+				sessionStorage.setItem("piece"+i,"place2");
 			}
 			else if(i == 6)
 			{
 				monDiv.style.backgroundPosition = '33% '+'33%';
+				sessionStorage.setItem("piece"+i,"place6");
 			}
 			else if(i == 7)
 			{
 				monDiv.style.backgroundPosition = '33% '+'66%';
+				sessionStorage.setItem("piece"+i,"place10");
 			}
 			else if(i == 8)
 			{
 				monDiv.style.backgroundPosition = '33% '+'100%';
+				sessionStorage.setItem("piece"+i,"place14");
 			}
 			else if(i == 9)
 			{
 				monDiv.style.backgroundPosition = '66% '+'0%';
+				sessionStorage.setItem("piece"+i,"place3");
 			}
 			else if(i == 10)
 			{
 				monDiv.style.backgroundPosition = '66% '+'33%';
+				sessionStorage.setItem("piece"+i,"place7");
 			}
 			else if(i == 11)
 			{
 				monDiv.style.backgroundPosition = '66% '+'66%';
+				sessionStorage.setItem("piece"+i,"place11");
 			}
 			else if(i == 12)
 			{
 				monDiv.style.backgroundPosition = '66% '+'100%';
+				sessionStorage.setItem("piece"+i,"place15");
 			}
 			else if(i == 13)
 			{
 				monDiv.style.backgroundPosition = '100% '+'0%';
+				sessionStorage.setItem("piece"+i,"place4");
 			}
 			else if(i == 14)
 			{
 				monDiv.style.backgroundPosition = '100% '+'33%';
+				sessionStorage.setItem("piece"+i,"place8");
 			}
 			else if(i == 15)
 			{
 				monDiv.style.backgroundPosition = '100% '+'66%';
+				sessionStorage.setItem("piece"+i,"place12");
 			}
 			else if(i == 16)
 			{
 				monDiv.style.backgroundPosition = '100% '+'100%';
+				sessionStorage.setItem("piece"+i,"place16");
 			}
 			
 			monDiv.style.width = morceauWidth+"px";
@@ -458,7 +489,6 @@ function afficheMorceauPuzzle(niveau, url)
 			monDiv.style.marginRight = '3px';
 			monDiv.style.border = 'solid black 3px';
 			monDiv.setAttribute("margin-right", "3px");
-			sessionStorage.setItem("piece"+i,"place"+i);
 			
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
