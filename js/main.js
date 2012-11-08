@@ -171,7 +171,7 @@ function drop_mot(target, e) {
     nbDragAction--;     // On décrémente le nombre de drag restant
     if(nbDragAction==0){
         // Jouer son perdu
-		$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
+		$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.ogg' type='audio/ogg'></audio>");
 		$("#popupPerdu").popup("open");
 		setTimeout("$('#popupPerdu').popup('close');", 5000);
 		setTimeout(function(){location.reload();}, 6000);
