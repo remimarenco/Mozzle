@@ -22,12 +22,18 @@ $( '#puzzle-niveau3' ).live( 'pageshow',function(event){
 function initialisation(niveau,nombrePiece) {
 
 	var iOS = !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
-	afficherScore();
+	
 	//nombre piece du puzzle
 	console.log("niveau "+niveau);
 	
 	sessionStorage.setItem("nombrePiece",nombrePiece);
-
+	sessionStorage.setItem("niveau",niveau);
+	
+	//si on est au niveau 3 on gere le nombre de déplacement
+	if(sessionStorage.getItem("niveau")==2) {
+		sessionStorage.setItem("essaisRestants",10);
+		afficherEssais();
+	}
 
 	//on initialisele tableau contenant l'etat des places
 	for (i=1; i<=nombrePiece; i++) {
@@ -45,6 +51,8 @@ function initialisation(niveau,nombrePiece) {
 	
 	var url = "res/img/animaux/animalPuzzle/animal1.png";
 	createPuzzle(niveau, url);
+	
+	afficherScore();
 	 //resize();
 }
  
@@ -82,7 +90,23 @@ function drop(target, e) {
 		}
 
 	}
+	//si on est au niveau 3 on gere le nombre de déplacement
+	if(sessionStorage.getItem("niveau")==2) {
+		
+		
+		console.log("passage dans la modif nombre essais");
+		//on décrémente le nombre d'essais
+		var essaisRestants=parseInt(sessionStorage.getItem("essaisRestants"))-1;
+		sessionStorage.setItem("essaisRestants",essaisRestants);
+		
+		//siil ne reste plus d'essais la partie est finie
+		if(essaisRestants==0 && estFinie!=1)
+		{
+			partiePerdue();
+		}
+		afficherEssais();
 	
+	}
 	if(estFinie==1)
 	{
 		partieGagnee();
@@ -128,6 +152,16 @@ function partieGagnee()
 	//alert("gagner");
 }
 
+//Function partiePerdue
+//Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie perdue
+function partiePerdue()
+{
+	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
+	//var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
+	//setTimeout("$('#popupGagne').popup('close');", 5000);
+	alert("perdueee");
+}
+
 //Function ajouterAuScore
 //Ajoute en nombre passé en parametre au score du joueur
 function ajouterAuScore(scoreAAjouter)
@@ -154,8 +188,18 @@ function afficherScore()
 		sessionStorage.setItem("score",0);
 	}
 	
+
 	//on recupere dans le score et on l'insere dans la div prévue
-	$('#score').html(sessionStorage.getItem("score"));
+	$('#score'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("score"));
+}
+
+//Function afficher Score
+//Recupere le score et l'insere dans la div "score"
+function afficherEssais()
+{
+	console.log("essaisRestatnts"+sessionStorage.getItem("essaisRestants"));
+	//on recupere dans le score et on l'insere dans la div prévue
+	$('#essaisRestants'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("essaisRestants"));
 }
 
 function liresound (soundFile) { 
