@@ -5,7 +5,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "POMME",
-        "img":"../res/img/fruits/pomme.png",
+        "img":"./res/img/fruits/pomme.png",
         "audio":"./res/audio/fruits/Fr-pomme.ogg",
         "lettres": [ 
             {
@@ -33,7 +33,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "POIRE",
-        "img":"../res/img/fruits/poire.png",
+        "img":"./res/img/fruits/poire.png",
         "audio":"./res/audio/fruits/Fr-poire.ogg",
 		"lettres": [ 
             {
@@ -61,7 +61,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "ORANGE",
-        "img":"../res/img/fruits/orange.png",
+        "img":"./res/img/fruits/orange.png",
         "audio":"./res/audio/fruits/Fr-orange.ogg",
 		"lettres": [ 
             {
@@ -93,7 +93,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "TOMATE",
-        "img":"../res/img/fruits/tomate.png",
+        "img":"./res/img/fruits/tomate.png",
         "audio":"./res/audio/fruits/Fr-tomate.ogg",
 		"lettres": [ 
             {
@@ -125,7 +125,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "NOISETTE",
-        "img":"../res/img/fruits/noisette.png",
+        "img":"./res/img/fruits/noisette.png",
         "audio":"./res/audio/fruits/Fr-noisette.ogg",
 		"lettres": [ 
             {
@@ -165,7 +165,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "FRAISE",
-        "img":"../res/img/fruits/fraise.png",
+        "img":"./res/img/fruits/fraise.png",
         "audio":"./res/audio/fruits/Fr-fraise.ogg",
 		"lettres": [ 
             {
@@ -197,7 +197,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "ABRICOT",
-        "img":"../res/img/fruits/abricot.png",
+        "img":"./res/img/fruits/abricot.png",
         "audio":"./res/audio/fruits/Fr-abricot.ogg",
 		"lettres": [ 
             {
@@ -233,7 +233,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "CITRON",
-        "img":"../res/img/fruits/citron.png",
+        "img":"./res/img/fruits/citron.png",
         "audio":"./res/audio/fruits/Fr-citron.ogg",
 		"lettres": [ 
             {
@@ -265,7 +265,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "ANANAS",
-        "img":"../res/img/fruits/ananas.png",
+        "img":"./res/img/fruits/ananas.png",
         "audio":"./res/audio/fruits/Fr-ananas.ogg",
 		"lettres": [ 
             {
@@ -297,7 +297,7 @@ var data = [
     {
         "categorie":"fruits",
         "libelle": "PECHE",
-        "img":"../res/img/fruits/peche.png",
+        "img":"./res/img/fruits/peche.png",
         "audio":"./res/audio/fruits/Fr-peche.ogg",
 		"lettres": [ 
             {
@@ -325,7 +325,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "CHEVAL",
-        "img":"../res/img/animaux/cheval.png",
+        "img":"./res/img/animaux/cheval.png",
         "audio":"./res/audio/animaux/Fr-cheval.ogg",
 		"lettres": [ 
             {
@@ -357,7 +357,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "CHIEN",
-        "img":"../res/img/animaux/chien.png",
+        "img":"./res/img/animaux/chien.png",
         "audio":"./res/audio/animaux/Fr-chien.ogg",
 		"lettres": [ 
             {
@@ -385,7 +385,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "CHAT",
-        "img":"../res/img/animaux/chat.png",
+        "img":"./res/img/animaux/chat.png",
         "audio":"./res/audio/animaux/Fr-chat.ogg",
 		"lettres": [ 
             {
@@ -409,7 +409,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "POISSON",
-        "img":"../res/img/animaux/poisson.png",
+        "img":"./res/img/animaux/poisson.png",
         "audio":"./res/audio/animaux/Fr-poisson.ogg",
 		"lettres": [ 
             {
@@ -445,7 +445,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "COCHON",
-        "img":"../res/img/animaux/cochon.png",
+        "img":"./res/img/animaux/cochon.png",
         "audio":"./res/audio/animaux/Fr-cochon.ogg",
 		"lettres": [ 
             {
@@ -477,7 +477,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "VACHE",
-        "img":"../res/img/animaux/vache.png",
+        "img":"./res/img/animaux/vache.png",
         "audio":"./res/audio/animaux/Fr-vache.ogg",
 		"lettres": [ 
             {
@@ -505,7 +505,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "MOUTON",
-        "img":"../res/img/animaux/mouton.png",
+        "img":"./res/img/animaux/mouton.png",
         "audio":"./res/audio/animaux/Fr-mouton.ogg",
 		"lettres": [ 
             {
@@ -537,7 +537,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "PERROQUET",
-        "img":"../res/img/animaux/perroquet.png",
+        "img":"./res/img/animaux/perroquet.png",
         "audio":"./res/audio/animaux/Fr-perroquet.ogg",
 		"lettres": [ 
             {
@@ -581,7 +581,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "SINGE",
-        "img":"../res/img/animaux/singe.png",
+        "img":"./res/img/animaux/singe.png",
         "audio":"./res/audio/animaux/Fr-singe.ogg",
 		"lettres": [ 
             {
@@ -609,7 +609,7 @@ var data = [
     {
         "categorie":"animaux",
         "libelle": "GIRAFE",
-        "img":"../res/img/animaux/girafe.png",
+        "img":"./res/img/animaux/girafe.png",
         "audio":"./res/audio/animaux/Fr-girafe.ogg",
 		"lettres": [ 
             {
@@ -641,7 +641,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "ORANGE",
-        "img":"../res/img/couleurs/orange.png",
+        "img":"./res/img/couleurs/orange.png",
         "audio":"./res/audio/couleurs/Fr-orange.ogg",
 		"lettres": [ 
             {
@@ -673,7 +673,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "BLEU",
-        "img":"../res/img/couleurs/bleu.png",
+        "img":"./res/img/couleurs/bleu.png",
         "audio":"./res/audio/couleurs/Fr-bleu.ogg",
 		"lettres": [ 
             {
@@ -697,7 +697,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "ROUGE",
-        "img":"../res/img/couleurs/rouge.png",
+        "img":"./res/img/couleurs/rouge.png",
         "audio":"./res/audio/couleurs/Fr-rouge.ogg",
 		"lettres": [ 
             {
@@ -725,7 +725,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "JAUNE",
-        "img":"../res/img/couleurs/jaune.png",
+        "img":"./res/img/couleurs/jaune.png",
         "audio":"./res/audio/couleurs/Fr-jaune.ogg",
 		"lettres": [ 
             {
@@ -753,7 +753,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "MARRON",
-        "img":"../res/img/couleurs/marron.png",
+        "img":"./res/img/couleurs/marron.png",
         "audio":"./res/audio/couleurs/Fr-marron.ogg",
 		"lettres": [ 
             {
@@ -785,7 +785,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "GRIS",
-        "img":"../res/img/couleurs/gris.png",
+        "img":"./res/img/couleurs/gris.png",
         "audio":"./res/audio/couleurs/Fr-gris.ogg",
 		"lettres": [ 
             {
@@ -809,7 +809,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "VIOLET",
-        "img":"../res/img/couleurs/violet.png",
+        "img":"./res/img/couleurs/violet.png",
         "audio":"./res/audio/couleurs/Fr-violet.ogg",
 		"lettres": [ 
             {
@@ -841,7 +841,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "BLANC",
-        "img":"../res/img/couleurs/blanc.png",
+        "img":"./res/img/couleurs/blanc.png",
         "audio":"./res/audio/couleurs/Fr-blanc.ogg",
 		"lettres": [ 
             {
@@ -869,7 +869,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "NOIR",
-        "img":"../res/img/couleurs/noir.png",
+        "img":"./res/img/couleurs/noir.png",
         "audio":"./res/audio/couleurs/Fr-noir.ogg",
 		"lettres": [ 
             {
@@ -893,7 +893,7 @@ var data = [
     {
         "categorie":"couleurs",
         "libelle": "VERT",
-        "img":"../res/img/couleurs/vert.png",
+        "img":"./res/img/couleurs/vert.png",
         "audio":"./res/audio/couleurs/Fr-vert.ogg",
 		"lettres": [ 
             {

@@ -1,15 +1,14 @@
 // Lorsque Jquery mobile est pret ...
 $(document).bind("mobileinit", function(){
   // TODO Configurer jquerymobile (http://jquerymobile.com/test/docs/api/globalconfig.html)
+  $.mobile.defaultPageTransition =  'flow'
 });
 
 // Lorsque Phonegap est pret ...
-window.addEventListener('load', function () {
-    document.addEventListener('deviceready', onDeviceReady, false);
-}, false);
+document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady(){
-    // TODO mettre le code ici une fois l'appli fini pour le test avec phonegap
+    jeuxMot();
 }
 
 $(document).ready(function(){
@@ -23,11 +22,9 @@ $(document).ready(function(){
     $('#score_mot').html(localStorage.getItem("score_mot"));
 })
 
-// TODO a wrap dans un module javascript
+function jeuxMot(){
 var nbDragAction = 1;   // Nombre de fois que l'on peux jouer (autant que de lettre + 1)
 var word = '';
-
-// TODO Declenchement du jeu de mot niveau i avec controle de la difficulté dans la fonction
 
 // Déclenchement du jeu mot niveau 1
 $( '#mot-niveau-1' ).live( 'pageshow',function(event){
@@ -46,7 +43,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     $.each(word['lettres'],function(i,val){
         nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
         if(i<=nbFirstLetter){
-            $('#ordre ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
+            $('#ordre ul').append("<li onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
         }else{
             lettreRestante.push(val);
             $('#ordre ul').append("<li id='"+val['libelle']+"' class='font-white vide' ondragenter='return false;' ondragover='return false;' ondrop=\'drop_mot(this, event, 1)\'>"+val['libelle']+"</li>");    // On ajoute les indications pour facile et moyen
@@ -56,11 +53,11 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre ul').append("<li onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
-    $('#illustration').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
+    $('#illustration').append("<img src='"+word['img']+"' />");
 
 });
 
@@ -83,7 +80,7 @@ $( '#mot-niveau-2' ).live( 'pageshow',function(event){
         nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
 
         if(i<=nbFirstLetter){
-            $('#ordre2 ul').append("<li  onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
+            $('#ordre2 ul').append("<li  onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
         }else{
             lettreRestante.push(val);
             $('#ordre2 ul').append("<li id='"+val['libelle']+"' class='vide' ondragenter='return false;' ondragover='return false;' ondrop=\'drop_mot(this, event,2)\'></li>"); 
@@ -93,11 +90,11 @@ $( '#mot-niveau-2' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre2 ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre2 ul').append("<li onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
-    $('#illustration2').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
+    $('#illustration2').append("<img src='"+word['img']+"' />");
 });
 
 // Déclenchement du jeu mot niveau 3
@@ -122,13 +119,14 @@ $( '#mot-niveau-3' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre3 ul').append("<li  onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre3 ul').append("<li  onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
-    $('#illustration3').append("<img src='res/img/"+word['categorie']+"/"+word['libelle']+".png' />");
+    $('#illustration3').append("<img src='"+word['img']+"' />");
 
 });
+}
 
 // Permet d'obtenir un mot au hazard de la liste de mot
 function getOneRandomWord(){
@@ -231,6 +229,14 @@ function drop_mot(target, e, difficulte) {
 
 function jouerSon(audio){
     $('body').append("<audio autoplay><source src='"+audio+"' type='audio/ogg'></audio>");
+    var chemin = "/android_asset/www/"+audio;
+    console.log(chemin);
+    sound = new Media(audio, function(){ 
+        console.log('son charger');
+    });   
+
+    // Jouer le son
+    sound.play();
 }
 
 //Function ajouterAuScoreMot
