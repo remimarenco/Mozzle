@@ -136,12 +136,11 @@ body{
 
 .desordre{
 	width: 100%;
-	margin: 0 15%;
 }
 
 .order{
-	width:50%;
-	margin: 0 35%;
+	width:25em;
+	margin: 0 auto;
 }
 
 .ordre li{
@@ -170,8 +169,8 @@ body{
 }
 
 .desorder{
-	width:50%;
-	margin: 0 25%;
+	width:25em;
+	margin: 0 auto;
 }
 
 .illustration{
