@@ -36,7 +36,7 @@ function initialisation(niveau,nombrePiece) {
 	//si on est au niveau 2 ou 3 on gere le nombre de déplacement
 	if(localStorage.getItem("niveau")==1)
 	{
-		url = "res/img/animaux/animalPuzzle/animal2.png";
+		url = "res/img/animaux/animalPuzzle/animal1.png";
 	}
 	else if(localStorage.getItem("niveau")==2 ) {
 		url = "res/img/animaux/animalPuzzle/animal2.png";
