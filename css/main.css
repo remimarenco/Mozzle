@@ -87,14 +87,22 @@ body{
 .bouton-mots{
 	background: #0B59D5;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
-	width:230px;  
+	width:270px;  
 	margin:auto;	
 }
 
 .bouton-puzzle{
 	background: #12C415;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
-	width:230px; 
+	width:270px; 
+	margin:auto; 
+	margin-top:10px;
+}
+
+.bouton-learn{
+	background: #FCDC12;
+	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
+	width:270px; 
 	margin:auto; 
 	margin-top:10px;
 }
@@ -103,7 +111,7 @@ body{
 	background: #CA0000;
 	font-weight:bold;
 	font-family: "Comic Sans MS", "Trebuchet MS", Times, "Times New Roman", serif;
-	width:230px;
+	width:270px;
 	margin:auto; 
 	margin-top:10px;
 }
@@ -119,6 +127,11 @@ body{
 }
 
 .bouton-puzzle .ui-btn-text{
+	color:#702963;
+	font-size: 20px;
+}
+
+.bouton-learn .ui-btn-text{
 	color:#702963;
 	font-size: 20px;
 }

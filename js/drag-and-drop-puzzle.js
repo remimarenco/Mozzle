@@ -219,8 +219,6 @@ function afficherScore()
 		sessionStorage.setItem("score",0);
 	}
 
-	
-
 	//on recupere dans le score et on l'insere dans la div prévue
 	$('#score'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("score"));
 }
@@ -254,6 +252,23 @@ function createPuzzle(niveau, url)
 	var morceauPuzzle = document.createElement('DIV');
 	
 	afficheMorceauPuzzle(niveau, url);
+
+	// On affiche l'image miniature exemple
+	affichageMiniature(niveau, url);
+}
+
+function affichageMiniature(niveau, url)
+{
+	var divImageMiniature = document.getElementById("imageMiniature"+niveau);
+
+	var imageMiniature = document.createElement('IMG');
+	imageMiniature.src = url;
+	imageMiniature.style.height = "100%";
+	imageMiniature.style.width = "100%";
+
+	divImageMiniature.style.border = 'solid black 3px';
+
+	divImageMiniature.appendChild(imageMiniature);
 }
 
 function afficheMorceauPuzzle(niveau, url)
