@@ -174,6 +174,15 @@ function partiePerdue()
 	//var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
 	//setTimeout("$('#popupGagne').popup('close');", 5000);
 	alert("perdueee");
+
+	var niveau = sessionStorage.getItem("niveau");
+
+	if(niveau == 3)
+	{
+		ajouterAuScore(-10);
+	}
+	
+	afficherScore();
 }
 
 //Function ajouterAuScore
@@ -187,6 +196,12 @@ function ajouterAuScore(scoreAAjouter)
 	}
 	//ajoute le nouveau score au precedent et on le stocke
 	var nouveauScore= parseInt(sessionStorage.getItem("score"))+parseInt(scoreAAjouter);
+
+	if(nouveauScore < 0)
+	{
+		nouveauScore = 0;
+	}
+
 	sessionStorage.setItem("score",nouveauScore);
 	
 	afficherScore();
