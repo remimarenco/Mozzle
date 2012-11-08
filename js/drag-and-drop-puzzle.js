@@ -336,7 +336,6 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.style.width = morceauWidth+"px";
 			monDiv.style.height = morceauHeight+"px";
-			//monDiv.style.display = 'inline-block';
 			monDiv.setAttribute("draggable", "true");
 			monDiv.style.margin = 'auto';
 			monDiv.style.marginBottom = '3px';
