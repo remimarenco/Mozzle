@@ -231,11 +231,26 @@ body{
 
 /********************* Puzzle ************************/
 
-#puzzle-frame {
+#puzzle-frame1 {
 	border: solid black 0.3em;
-	width: 60em;
-	height: 80em;
 }
+#puzzle-frame1 > div {
+	float: left;
+}
+#puzzle-frame2 {
+	border: solid black 0.3em;
+}
+#puzzle-frame2 > div {
+	float: left;
+}
+#puzzle-frame3 {
+	border: solid black 0.3em;
+}
+#puzzle-frame3 > div {
+	float: left;
+}
+
+
 
 #puzzle-frame > div {
 	width: 20em;

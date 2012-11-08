@@ -243,19 +243,4 @@ function ajouterAuScoreMot(scoreAAjouter)
     //ajoute le nouveau score au precedent et on le stocke
     var nouveauScore= parseInt(sessionStorage.getItem("score_mot"))+parseInt(scoreAAjouter);
     sessionStorage.setItem("score_mot",nouveauScore);
-
-    // $('#score_mot').trigger("afficherScoreMot"); // On appel notre propre evenement pour afficher le score dès qu'il est mis a jour
-
-}
-
-//Function afficherScoreMot
-//Recupere le score et l'insere dans note page pour le jeux mot
-function afficherScoreMot()
-{
-    console.log('test');
-    //si le score est nul on le met a 0
-
-    
-    //on recupere dans le score et on l'insere dans la div prévue
-    
 }
