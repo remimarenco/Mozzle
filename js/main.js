@@ -13,11 +13,14 @@ function onDeviceReady(){
 }
 
 $(document).ready(function(){
+    
+    var localStorage = window.localStorage; // Variable permettant la manipulation du localstorage
+
     // On met a jour le score
-    if(sessionStorage.getItem("score_mot")==null) {
-        sessionStorage.setItem("score_mot",0);
+    if(localStorage.getItem("score_mot")==null) {
+        localStorage.setItem("score_mot",0);
     }
-    $('#score_mot').html(sessionStorage.getItem("score_mot"));
+    $('#score_mot').html(localStorage.getItem("score_mot"));
 })
 
 // TODO a wrap dans un module javascript
@@ -43,7 +46,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     $.each(word['lettres'],function(i,val){
         nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
         if(i<=nbFirstLetter){
-            $('#ordre ul').append("<li onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
+            $('#ordre ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
         }else{
             lettreRestante.push(val);
             $('#ordre ul').append("<li id='"+val['libelle']+"' class='font-white vide' ondragenter='return false;' ondragover='return false;' ondrop=\'drop_mot(this, event, 1)\'>"+val['libelle']+"</li>");    // On ajoute les indications pour facile et moyen
@@ -53,7 +56,7 @@ $( '#mot-niveau-1' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre ul').append("<li onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
@@ -80,7 +83,7 @@ $( '#mot-niveau-2' ).live( 'pageshow',function(event){
         nbDragAction++;     // Il y a autant d'action que de nombre de lettre dans le mot + 1
 
         if(i<=nbFirstLetter){
-            $('#ordre2 ul').append("<li  onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
+            $('#ordre2 ul').append("<li  onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='"+val['libelle']+"'>"+val['libelle']+"</li>");    // On ajoute les premieres lettres en noire
         }else{
             lettreRestante.push(val);
             $('#ordre2 ul').append("<li id='"+val['libelle']+"' class='vide' ondragenter='return false;' ondragover='return false;' ondrop=\'drop_mot(this, event,2)\'></li>"); 
@@ -90,7 +93,7 @@ $( '#mot-niveau-2' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre2 ul').append("<li  onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre2 ul').append("<li onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
@@ -119,7 +122,7 @@ $( '#mot-niveau-3' ).live( 'pageshow',function(event){
     // Dans tout les cas,on affiche les lettres dans le desordre
     lettreRestante.sort(function() { return 0.5 - Math.random() });
     $.each(lettreRestante,function(i,val){
-        $('#desordre3 ul').append("<li  onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
+        $('#desordre3 ul').append("<li  onTouch=\"jouerSon('"+val['audio']+"')\" onClick=\"jouerSon('"+val['audio']+"')\" id='desordre_"+val['libelle']+"' draggable='true' ondragstart=\'drag_mot(this, event)\'>"+val['libelle']+"</li>");    // On ajoute les lettres restantes        
     });
 
     // On ajoute notre element sur la page
@@ -235,12 +238,12 @@ function jouerSon(audio){
 function ajouterAuScoreMot(scoreAAjouter)
 {
     //si le score est nul on le met a 0
-    if(sessionStorage.getItem("score_mot")==null)
+    if(localStorage.getItem("score_mot")==null)
     {
-        sessionStorage.setItem("score_mot",0);
+        localStorage.setItem("score_mot",0);
     }
 
     //ajoute le nouveau score au precedent et on le stocke
-    var nouveauScore= parseInt(sessionStorage.getItem("score_mot"))+parseInt(scoreAAjouter);
-    sessionStorage.setItem("score_mot",nouveauScore);
+    var nouveauScore= parseInt(localStorage.getItem("score_mot"))+parseInt(scoreAAjouter);
+    localStorage.setItem("score_mot",nouveauScore);
 }
