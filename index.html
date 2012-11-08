@@ -209,8 +209,9 @@
 		<div data-role="content" class="content">
 			<div id ='center' style='margin:0 auto;'>
 				<div id='top'>
-					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<span id='score1'></span></h1></div>
-					<div id='imageMiniature'style='display:block;float:left;'></div>
+					<div id='affichageScore'style='display:block;'><h1>Votre score:<span id='score1'></span></h1></div>
+					<div id='imageMiniature1'style='display:block; width: 160px; height: 160px; margin-bottom: 5px'>
+					</div>
 				</div>
 				<div id="frameHolder" style="clear:both;">
 					<div id="puzzle-frame1">
@@ -219,8 +220,13 @@
 				<div id="pieces1">
 					<h2>Pieces</h2>
 				</div>
-				<div data-role="popup" id="popupGagne">
-					<img src='res/img/boutons/gagne.gif'/>
+				<div data-role="popup" id="popupGagne1">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">GAGNE</p>
+					<img src='res/img/animaux/animalPuzzle/animal1.png'/>
+				</div>
+				<div data-role="popup" id="popupPerdu1">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">PERDU</p>
+					<img src='res/img/animaux/animalPuzzle/animal1.png'/>
 				</div>
 
 			</div>
@@ -236,33 +242,33 @@
 	<!--************************************************************************************************************-->
 	<div id="puzzle-niveau2" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - MOYEN</p>
 			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
 		<div data-role="content" class="content">
 			<div id ='center' style='margin:0 auto;'>
 				<div id='top'>
-					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<span id='score2'></span></h1></div>
-					<div id='affichageEssaisRestants'style='display:block;float:left;'><h1>Il te reste <div id='essaisRestants2'></div> essais</h1></div>
-					<div id='imageMiniature'style='display:block;float:left;'></div>
+					<div id='affichageScore'style='display:block;'><h1>Votre score:<span id='score2'></span></h1></div>
+					<div id='imageMiniature2'style='display:block; width: 160px; height: 160px; margin-bottom: 5px'></div>
 				</div>
 				<div id="frameHolder" style="clear:both;">
 					<div id="puzzle-frame2">
 					</div>
 				</div>
+				<div id='affichageEssaisRestants'style='display:block;'><h1>Il te reste <span id='essaisRestants2'></span> essais</h1></div>
+
 				<div id="pieces2">
 					<h2>Pieces</h2>
 				</div>
-				<div data-role="popup" id="popupGagne">
+				<div data-role="popup" id="popupGagne2">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">GAGNE</p>
 					<img src='res/img/boutons/gagne.gif'/>
 				</div>
-
-				<script>
-
-				</script>
+				<div data-role="popup" id="popupPerdu2">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">PERDU</p>
+					<img src='res/img/boutons/perdu.gif'/>
+				</div>
 			</div>
-			
-
 		</div>
 
 		<div data-role="footer" data-theme="a">
@@ -276,31 +282,33 @@
 
 	<div id="puzzle-niveau3" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white;">PUZZLE</p>
+			<p align="center" style="color: white;">PUZZLE - DIFFICILE</p>
 			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
 		</div>
 
 		<div data-role="content" class="content">
 			<div id ='center' style='margin:0 auto;'>
 				<div id='top'>
-					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<span id='score3'></span></h1></div>
-					<div id='affichageEssaisRestants'style='display:block;float:left;'><h1>Il te reste <div id='essaisRestants2'></div> essais</h1></div>
-					<div id='imageMiniature'style='display:block;float:left;'></div>
+					<div id='affichageScore'style='display:block;'><h1>Votre score:<span id='score3'></span></h1></div>
+					<div id='imageMiniature3'style='display:block; width: 160px; height: 160px; margin-bottom: 5px'></div>
 				</div>
 				<div id="frameHolder" style="clear:both;">
 					<div id="puzzle-frame3">
 					</div>
 				</div>
+				<div id='affichageEssaisRestants'style='display:block;'><h1>Il te reste <span id='essaisRestants3'></span> essais</h1></div>
+				<div id='timerEssai' style='display:block'><h1>Il te reste <span id='tempsEssai'></span> secondes</h1></div>
 				<div id="pieces3">
 					<h2>Pieces</h2>
 				</div>
-				<div data-role="popup" id="popupGagne">
+				<div data-role="popup" id="popupGagne3">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">GAGNE</p>
 					<img src='res/img/boutons/gagne.gif'/>
 				</div>
-
-				<script>
-
-				</script>
+				<div data-role="popup" id="popupPerdu3">
+					<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">PERDU</p>
+					<img src='res/img/boutons/perdu.gif'/>
+				</div>
 			</div>
 		</div>
 		
