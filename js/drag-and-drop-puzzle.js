@@ -355,7 +355,6 @@ function afficheMorceauPuzzle(niveau, url)
 			monDiv.style.margin = 'auto';
 			monDiv.style.marginBottom = '3px';
 			monDiv.style.border = 'solid black 3px';
-			monDiv.setAttribute("margin-right", "3px");
 			localStorage.setItem("piece"+i,"place"+i);
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
@@ -441,9 +440,9 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.style.width = morceauWidth+"px";
 			monDiv.style.height = morceauHeight+"px";
-			monDiv.style.display = 'inline-block';
 			monDiv.setAttribute("draggable", "true");
-			monDiv.style.marginRight = '3px';
+			monDiv.style.margin = 'auto';
+			monDiv.style.marginBottom = '3px';
 			monDiv.style.border = 'solid black 3px';
 			monDiv.setAttribute("margin-right", "3px");
 			monDiv.setAttribute("ondragstart","drag(this, event);");
@@ -567,9 +566,9 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.style.width = morceauWidth+"px";
 			monDiv.style.height = morceauHeight+"px";
-			monDiv.style.display = 'inline-block';
 			monDiv.setAttribute("draggable", "true");
-			monDiv.style.marginRight = '3px';
+			monDiv.style.margin = 'auto';
+			monDiv.style.marginBottom = '3px';
 			monDiv.style.border = 'solid black 3px';
 			monDiv.setAttribute("margin-right", "3px");
 			
