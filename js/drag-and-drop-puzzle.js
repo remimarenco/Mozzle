@@ -1,45 +1,28 @@
 // JavaScript Document
 // check for drag and drop support
 var iOS = !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
-
+afficherScore();
 //nombre piece du puzzle
 sessionStorage.setItem("nomprePiece",4);
+
+
+var widthGlobale = 320;
+var heightGlobale = 320;
 
 //on initialisele tableau contenant l'etat des places
 for (i=0; i<sessionStorage.getItem("nomprePiece"); i++) {
 	sessionStorage.setItem("place"+i,0);
 }
-// set images array
-var images = [];
-var piece = "";
-var place = ""; 
-for (i=0; i<9; i++) {
-	j = i+1;
-	images[i] = "animal" + j + ".png"; 	
+
+afficheMorceauPuzzle(sessionStorage.getItem("nomprePiece"));
+
+
+//des places dans le puzzle frame
+for (i=0; i<sessionStorage.getItem("nomprePiece"); i++) {
+	$('#puzzle-frame2').append("<div id=\"place"+i+"\"  ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
+      //redimensionement
 }
-// randomize the pieces to display
-images.sort(function() {return 0.5 - Math.random()});
-for (i=0; i<9; i++) {
-	$('#pieces').append("<img width=\"320\" height=\"320\" src=\"./res/img/Animaux/"+images[i]+"\" id=\"piece"+i+"\" draggable=true ondragstart=\"drag(this, event);\">");
-	sessionStorage.setItem("piece"+i,"place"+i);
-	// iPhone and iPad functionality
-	if (iOS) {
-		piece = "piece"+i;
-		place = "place"+i;
-		$("#piece"+i).css('float','left');
-		new webkit_draggable(piece, {revert : false, scroll : true} );
-		webkit_drop.add(place, {onDrop : function() { 
-			$("#place"+i).append(piece);
-		}
-		});
-	}
-
-}
-// add drag and drop functions on the frame divs
-
-
-
- resize();
+ //resize();
  
  
 function drag(draggableitem, e) {
@@ -50,7 +33,7 @@ function drop(target, e) {
 
 	//on recupere dans le local storage la place de depart de la piece
 	var placeOfPiece = sessionStorage.getItem(id);
-	alert(placeOfPiece +" "+target.id);
+	alert("id "+id+" "+placeOfPiece +" "+target.id);
 
 	//on compare la place de la piece et la place ou elle doit etre deplacée
 	if (placeOfPiece==target.id)
@@ -75,22 +58,307 @@ function drop(target, e) {
 		}
 
 	}
-
+	
 	if(estFinie==1)
 	{
-		alert('gagneeeeeee');
+		partieGagnee();
 	}
 
 }
 
+//Function resize
+//Redimensionne le puzzle et les pieces en fonction de la taille de l'ecrans
 function resize() {
 	var largeur=screen.availWidth*0.8;
 	document.getElementById('puzzle-frame2').style.height=(largeur)+'px';
 	document.getElementById('puzzle-frame2').style.width=(largeur)+'px';
+	
+	//on redimenssionne les pieces en fonction du nombre de piece
+	var indice=2;
+	if(sessionStorage.getItem("nomprePiece")==4)
+	{
+		indice=2;
+	} else 	if(sessionStorage.getItem("nomprePiece")==9)
+	{
+		indice=3;
+	} else if(sessionStorage.getItem("nomprePiece")==16)
+	{
+		indice=4;
+	}
 	for (i=0; i<sessionStorage.getItem("nomprePiece"); i++) {
-		document.getElementById('piece'+i).style.height=(largeur/2)+'px';
-		document.getElementById('piece'+i).style.width=(largeur/2)+'px';
-		document.getElementById('place'+i).style.height=(largeur/2)+'px';
-		document.getElementById('place'+i).style.width=(largeur/2)+'px';
+
+		document.getElementById('piece'+i).style.height=(largeur/indice)+'px';
+		document.getElementById('piece'+i).style.width=(largeur/indice)+'px';
+		document.getElementById('place'+i).style.height=(largeur/indice)+'px';
+		document.getElementById('place'+i).style.width=(largeur/indice)+'px';
 	}
 }
+
+//Function partieGagnee
+//Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie 
+function partieGagnee()
+{
+	alert('gagneeeeeee');
+	ajouterAuScore(10);
+	liresound ('res\audio\bruitagePuzzle\Fr-B.ogg');
+}
+
+//Function ajouterAuScore
+//Ajoute en nombre passé en parametre au score du joueur
+function ajouterAuScore(scoreAAjouter)
+{
+	//si le score est nul on le met a 0
+	if(sessionStorage.getItem("score")==null)
+	{
+		sessionStorage.setItem("score",0);
+	}
+	//ajoute le nouveau score au precedent et on le stocke
+	var nouveauScore= parseInt(sessionStorage.getItem("score"))+parseInt(scoreAAjouter);
+	sessionStorage.setItem("score",nouveauScore);
+	
+	afficherScore();
+}
+
+//Function afficher Score
+//Recupere le score et l'insere dans la div "score"
+function afficherScore()
+{
+	//si le score est nul on le met a 0
+	if(sessionStorage.getItem("score")==null)
+	{
+		sessionStorage.setItem("score",0);
+	}
+	
+	//on recupere dans le score et on l'insere dans la div prévue
+	$('#score').html(sessionStorage.getItem("score"));
+}
+
+function liresound (soundFile) { 
+ var audio;
+ audio = new Audio(soundFile);
+ audio.play();
+}
+
+function createPuzzle(niveau, url)
+{
+	// Récupération de l'élément qui va contenir la div
+	var myCtn=document.getElementById("puzzle-frame");
+
+	myCtn.style.height = heightGlobale + "px";
+	myCtn.style.width = widthGlobale + "px";
+
+	var morceauPuzzle = document.createElement('DIV');
+
+	afficheMorceauPuzzle(niveau, url);
+}
+
+function afficheMorceauPuzzle(niveau, url)
+{
+	var morceauWidth;
+	var morceauHeight;
+
+	if(niveau == 1)
+	{
+		morceauHeight = heightGlobale / 2;
+		morceauWidth = widthGlobale / 2;
+
+		var Myctn=document.getElementById("pieces1");
+
+		for(i=1;i<=4;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
+
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
+			monDiv.style.marginRight = '3px';
+			monDiv.style.border = 'solid black 3px';
+			monDiv.setAttribute("margin-right", "3px");
+			sessionStorage.setItem("piece"+i-1,"place"+i-1);
+			monDiv.setAttribute("ondragstart","drag(this, event);");
+
+			Myctn.appendChild(monDiv);
+		}
+	}
+	else if(niveau == 2)
+	{
+
+		morceauHeight = heightGlobale / 3;
+		morceauWidth = widthGlobale / 3;
+
+		var Myctn=document.getElementById("pieces2");
+
+		for(i=1;i<=9;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
+
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '50% '+'0%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '50% '+'50%';
+			}
+			else if(i == 5)
+			{
+				monDiv.style.backgroundPosition = '50% '+'100%';
+			}
+			else if(i == 6)
+			{
+				monDiv.style.backgroundPosition = '0% '+'50%';
+			}
+			else if(i == 7)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 8)
+			{
+				monDiv.style.backgroundPosition = '100% '+'50%';
+			}
+			else if(i == 9)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
+			monDiv.style.marginRight = '3px';
+			monDiv.style.border = 'solid black 3px';
+			monDiv.setAttribute("margin-right", "3px");
+			sessionStorage.setItem("piece"+i-1,"place"+i-1);
+			monDiv.setAttribute("ondragstart","drag(this, event);");
+
+			Myctn.appendChild(monDiv);
+		}
+	}
+	else if(niveau == 3)
+	{
+		morceauHeight = heightGlobale / 4;
+		morceauWidth = widthGlobale / 4;
+
+		var Myctn=document.getElementById("pieces3");
+
+		for(i=1;i<=16;i++)
+		{
+			var monDiv = document.createElement('DIV');
+			monDiv.setAttribute("id", "piece"+i);
+			monDiv.className = 'divPuzzle';
+			monDiv.innerHTML = "";
+			monDiv.style.backgroundImage="url("+url+")";
+
+			if(i == 1)
+			{
+				monDiv.style.backgroundPosition ='0% '+'0%';
+			}
+			else if(i == 2)
+			{
+				monDiv.style.backgroundPosition = '0% '+'33%';
+			}
+			else if(i == 3)
+			{
+				monDiv.style.backgroundPosition = '0% '+'66%';
+			}
+			else if(i == 4)
+			{
+				monDiv.style.backgroundPosition = '0% '+'100%';
+			}
+			else if(i == 5)
+			{
+				monDiv.style.backgroundPosition = '33% '+'0%';
+			}
+			else if(i == 6)
+			{
+				monDiv.style.backgroundPosition = '33% '+'33%';
+			}
+			else if(i == 7)
+			{
+				monDiv.style.backgroundPosition = '33% '+'66%';
+			}
+			else if(i == 8)
+			{
+				monDiv.style.backgroundPosition = '33% '+'100%';
+			}
+			else if(i == 9)
+			{
+				monDiv.style.backgroundPosition = '66% '+'0%';
+			}
+			else if(i == 10)
+			{
+				monDiv.style.backgroundPosition = '66% '+'33%';
+			}
+			else if(i == 11)
+			{
+				monDiv.style.backgroundPosition = '66% '+'66%';
+			}
+			else if(i == 12)
+			{
+				monDiv.style.backgroundPosition = '66% '+'100%';
+			}
+			else if(i == 13)
+			{
+				monDiv.style.backgroundPosition = '100% '+'0%';
+			}
+			else if(i == 14)
+			{
+				monDiv.style.backgroundPosition = '100% '+'33%';
+			}
+			else if(i == 15)
+			{
+				monDiv.style.backgroundPosition = '100% '+'66%';
+			}
+			else if(i == 16)
+			{
+				monDiv.style.backgroundPosition = '100% '+'100%';
+			}
+			
+			monDiv.style.width = morceauWidth+"px";
+			monDiv.style.height = morceauHeight+"px";
+			monDiv.style.display = 'inline-block';
+			monDiv.setAttribute("draggable", "true");
+			monDiv.style.marginRight = '3px';
+			monDiv.style.border = 'solid black 3px';
+			monDiv.setAttribute("margin-right", "3px");
+			sessionStorage.setItem("piece"+i-1,"place"+i-1);
+			monDiv.setAttribute("ondragstart","drag(this, event);");
+
+			Myctn.appendChild(monDiv);
+		}
+	}
+} 
