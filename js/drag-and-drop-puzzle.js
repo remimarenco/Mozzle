@@ -30,12 +30,20 @@ function initialisation(niveau,nombrePiece) {
 	localStorage.setItem("nombrePiece",nombrePiece);
 	localStorage.setItem("niveau",niveau);
 	localStorage.setItem("estFinie",0);
+
+	var url;
 	
 	//si on est au niveau 2 ou 3 on gere le nombre de déplacement
-	if(localStorage.getItem("niveau")==2 ) {
+	if(localStorage.getItem("niveau")==1)
+	{
+		url = "res/img/animaux/animalPuzzle/animal2.png";
+	}
+	else if(localStorage.getItem("niveau")==2 ) {
+		url = "res/img/animaux/animalPuzzle/animal2.png";
 		localStorage.setItem("essaisRestants",18);
 		afficherEssais();
 	} else if (localStorage.getItem("niveau")==3) {
+		url = "res/img/animaux/animalPuzzle/animal3.png";
 		localStorage.setItem("essaisRestants",32);
 		console.log("essai restant niveau3: "+localStorage.getItem('essaisRestants'));
 		afficherEssais();
@@ -55,7 +63,7 @@ function initialisation(niveau,nombrePiece) {
 		$('#puzzle-frame'+niveau).append("<div id=\"place"+i+"\" ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
 	}
 	
-	var url = "res/img/animaux/animalPuzzle/animal1.png";
+	
 	createPuzzle(niveau, url);
 	afficherScore();
 	
