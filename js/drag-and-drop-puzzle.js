@@ -162,7 +162,7 @@ function resize() {
 function partieGagnee()
 {
 	$("#popupGagnePuzzle"+localStorage.getItem("niveau")).popup("open");
-	$('body').append("<audio autoplay><source src='res/audio/animaux/Fr-chat.ogg' type='audio/ogg'></audio>");
+	//$('body').append("<audio autoplay><source src='res/audio/animaux/Fr-chat.ogg' type='audio/ogg'></audio>");
 	
 
 	
