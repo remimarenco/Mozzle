@@ -642,7 +642,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "ORANGE",
         "img":"../res/img/couleurs/orange.png",
-        "audio":"../res/audio/couleurs/Fr-orange.ogg",
+        "audio":"./res/audio/couleurs/Fr-orange.ogg",
 		"lettres": [ 
             {
                 "libelle":"O",
@@ -674,7 +674,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "BLEU",
         "img":"../res/img/couleurs/bleu.png",
-        "audio":"../res/audio/couleurs/Fr-bleu.ogg",
+        "audio":"./res/audio/couleurs/Fr-bleu.ogg",
 		"lettres": [ 
             {
                 "libelle":"B",
@@ -698,7 +698,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "ROUGE",
         "img":"../res/img/couleurs/rouge.png",
-        "audio":"../res/audio/couleurs/Fr-rouge.ogg",
+        "audio":"./res/audio/couleurs/Fr-rouge.ogg",
 		"lettres": [ 
             {
                 "libelle":"R",
@@ -726,7 +726,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "JAUNE",
         "img":"../res/img/couleurs/jaune.png",
-        "audio":"../res/audio/couleurs/Fr-jaune.ogg",
+        "audio":"./res/audio/couleurs/Fr-jaune.ogg",
 		"lettres": [ 
             {
                 "libelle":"J",
@@ -754,7 +754,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "MARRON",
         "img":"../res/img/couleurs/marron.png",
-        "audio":"../res/audio/couleurs/Fr-marron.ogg",
+        "audio":"./res/audio/couleurs/Fr-marron.ogg",
 		"lettres": [ 
             {
                 "libelle":"M",
@@ -786,7 +786,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "GRIS",
         "img":"../res/img/couleurs/gris.png",
-        "audio":"../res/audio/couleurs/Fr-gris.ogg",
+        "audio":"./res/audio/couleurs/Fr-gris.ogg",
 		"lettres": [ 
             {
                 "libelle":"G",
@@ -810,7 +810,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "VIOLET",
         "img":"../res/img/couleurs/violet.png",
-        "audio":"../res/audio/couleurs/Fr-violet.ogg",
+        "audio":"./res/audio/couleurs/Fr-violet.ogg",
 		"lettres": [ 
             {
                 "libelle":"V",
@@ -842,7 +842,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "BLANC",
         "img":"../res/img/couleurs/blanc.png",
-        "audio":"../res/audio/couleurs/Fr-blanc.ogg",
+        "audio":"./res/audio/couleurs/Fr-blanc.ogg",
 		"lettres": [ 
             {
                 "libelle":"B",
@@ -870,7 +870,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "NOIR",
         "img":"../res/img/couleurs/noir.png",
-        "audio":"../res/audio/couleurs/Fr-noir.ogg",
+        "audio":"./res/audio/couleurs/Fr-noir.ogg",
 		"lettres": [ 
             {
                 "libelle":"N",
@@ -894,7 +894,7 @@ var data = [
         "categorie":"couleurs",
         "libelle": "VERT",
         "img":"../res/img/couleurs/vert.png",
-        "audio":"../res/audio/couleurs/Fr-vert.ogg",
+        "audio":"./res/audio/couleurs/Fr-vert.ogg",
 		"lettres": [ 
             {
                 "libelle":"V",
