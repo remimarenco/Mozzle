@@ -259,11 +259,12 @@ function afficheMorceauPuzzle(niveau, url)
 {
 	var morceauWidth;
 	var morceauHeight;
-
+	var Myctn;
+	// On créé un tableau dans lequel on va stocker les div
+	var MonTableau = new Array();
 
 	if(niveau == 1)
 	{
-
 		morceauHeight = heightGlobale / 2;
 		morceauWidth = widthGlobale / 2;
 		
@@ -272,7 +273,7 @@ function afficheMorceauPuzzle(niveau, url)
 			place.style.height = morceauHeight+"px";
 			place.style.width = morceauWidth+"px";
 		}
-		var Myctn=document.getElementById("pieces1");
+		Myctn=document.getElementById("pieces1");
 
 		for(i=1;i<=4;i++)
 		{
@@ -309,7 +310,17 @@ function afficheMorceauPuzzle(niveau, url)
 			sessionStorage.setItem("piece"+i,"place"+i);
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*4);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*4);
+			}
+			MonTableau[indice] = monDiv;	
+		}
+
+		for(i=0;i<4;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 	else if(niveau == 2)
@@ -325,7 +336,7 @@ function afficheMorceauPuzzle(niveau, url)
 			place.style.width = morceauWidth+"px";
 		}
 
-		var Myctn=document.getElementById("pieces2");
+		Myctn=document.getElementById("pieces2");
 
 		for(i=1;i<=9;i++)
 		{
@@ -390,14 +401,24 @@ function afficheMorceauPuzzle(niveau, url)
 			monDiv.setAttribute("margin-right", "3px");
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*9);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*9);
+			}
+			MonTableau[indice] = monDiv;
+		}
+
+		for(i=0;i<9;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 	else if(niveau == 3)
 	{
 
 
-		var Myctn=document.getElementById("pieces3");
+		Myctn=document.getElementById("pieces3");
 		
 		morceauHeight = heightGlobale / 4;
 		morceauWidth = widthGlobale / 4;
@@ -507,7 +528,17 @@ function afficheMorceauPuzzle(niveau, url)
 			
 			monDiv.setAttribute("ondragstart","drag(this, event);");
 
-			Myctn.appendChild(monDiv);
+			var indice = Math.floor(Math.random()*16);
+			while(MonTableau[indice] != null)
+			{
+				indice = Math.floor(Math.random()*16);
+			}
+			MonTableau[indice] = monDiv;
+		}
+
+		for(i=0;i<16;i++)
+		{
+			Myctn.appendChild(MonTableau[i]);
 		}
 	}
 } 
