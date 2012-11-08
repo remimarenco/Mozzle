@@ -10,8 +10,8 @@
 	<script src="js/lib/jquery-1.8.2.min.js"></script>
 	<script src="js/data.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/puzzleDecoupe.js"></script>
 	<script src="js/lib/jquery.mobile-1.2.0.min.js"></script>
+	<script src="js/drag-and-drop-puzzle.js"></script>
 </head>
 <body>
 
@@ -54,12 +54,14 @@
 		</div>
 
 		<div data-role="content" class="content">	
+			<div class="score">
+				<span>Votre Score : </span>
+				<span id="score_mot"></span>
+			</div>
 			<a id="bouton-niveau-1" class="bouton-niveau-1" data-role="button" href="#mot-niveau-1"><img src="./res/img/boutons/mots.png" alt="mots-facile" style="position:relative; top:30%;" />FACILE</a>
 			<a id="bouton-niveau-2" class="bouton-niveau-2" data-role="button" href="#mot-niveau-2"><img src="./res/img/boutons/mots.png" alt="mots-moyen" style="position:relative; top:30%;" />MOYEN</a>
 			<a id="bouton-niveau-3" class="bouton-niveau-3" data-role="button" href="#mot-niveau-3"><img src="./res/img/boutons/mots.png" alt="mots-difficile" style="position:relative; top:30%;" />DIFFICILE</a>
-			
 		</div>
-
 		<div data-role="footer" data-theme="a">
 			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
@@ -73,13 +75,6 @@
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
-				</ul>
-			</div><!-- /navbar -->
 		</div>
 		<div data-theme="d" data-role="content">
 			<div class="illustration" id="illustration"></div>
@@ -114,15 +109,8 @@
 	
 	<div id="mot-niveau-2" data-role="page">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - MOYEN</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
-				</ul>
-			</div><!-- /navbar -->
 		</div>
 		<div data-theme="d" data-role="content">
 			<div class="illustration" id="illustration2"></div>
@@ -137,10 +125,10 @@
 					<!-- Contient les lettres dans le desordre -->
 				</ul>
 			</div>
-			<div data-role="popup" id="popupGagne">
+			<div data-role="popup" id="popupGagne2">
 				<img src='res/img/boutons/gagne.gif'/>
 			</div>
-			<div data-role="popup" id="popupPerdu">
+			<div data-role="popup" id="popupPerdu2">
 				<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">PERDU</p>
 				<img src='res/img/boutons/perdu.gif'/>
 			</div>
@@ -157,15 +145,8 @@
 	
 	<div id="mot-niveau-3" data-role="page">
 		<div data-role="header" data-theme="a">
-			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - FACILE</p>
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">CONSTRUIRE UN MOT - DIFFICILE</p>
 			<a href="#index" data-icon="home" data-iconpos="notext">Home</a>
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#"><img src="./res/img/boutons/animaux.png" alt="mots-animaux" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/couleurs.png" alt="mots-couleurs" style="position:relative; top:30%; width:50px;"/></a></li>
-					<li><a href="#"><img src="./res/img/boutons/fruits.png" alt="mots-fruits" style="position:relative; top:30%; width:50px;"/></a></li>
-				</ul>
-			</div><!-- /navbar -->
 		</div>
 		<div data-theme="d" data-role="content">
 			<div class="illustration" id="illustration3"></div>
@@ -180,10 +161,10 @@
 					<!-- Contient les lettres dans le desordre -->
 				</ul>
 			</div>
-			<div data-role="popup" id="popupGagne">
+			<div data-role="popup" id="popupGagne3">
 				<img src='res/img/boutons/gagne.gif'/>
 			</div>
-			<div data-role="popup" id="popupPerdu">
+			<div data-role="popup" id="popupPerdu3">
 				<p style="font-family:Comic Sans MS; font-weight:bold; text-align:center;">PERDU</p>
 				<img src='res/img/boutons/perdu.gif'/>
 			</div>
@@ -215,10 +196,9 @@
 		</div>
 	</div>
 	
-
 	<!--************************************************************************************************************-->
 	<!-- 								Page pour le puzzle: niveau facile											-->
-	<!--************************************************************************************************************-->
+	<!--************************************************************************************************************-->*
 	<div id="puzzle-niveau1" data-role="page" class="type-index">
 		<div data-role="header" data-theme="a">
 			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
@@ -227,25 +207,105 @@
 		<div data-role="content" class="content">
 			<div id ='center' style='margin:0 auto;'>
 				<div id='top'>
-					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score'></div></h1></div>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score1'></div></h1></div>
+					<div id='imageMiniature'style='display:block;float:left;'></div>
+				</div>
+				<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame1">
+					</div>
+				</div>
+				<div id="pieces1">
+					<h2>Pieces</h2>
+				</div>
+				<div data-role="popup" id="popupGagne">
+					<img src='res/img/boutons/gagne.gif'/>
+				</div>
+
+			</div>
+
+		</div>
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 								Page pour le puzzle: niveau moyen											-->
+	<!--************************************************************************************************************-->
+	<div id="puzzle-niveau2" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white; font-family:Comic Sans MS; font-size: 24px;">PUZZLE - FACILE</p>
+			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+		</div>
+		<div data-role="content" class="content">
+			<div id ='center' style='margin:0 auto;'>
+				<div id='top'>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score2'></div></h1></div>
+					<div id='affichageEssaisRestants'style='display:block;float:left;'><h1>Il te reste <div id='essaisRestants2'></div> essais</h1></div>
 					<div id='imageMiniature'style='display:block;float:left;'></div>
 				</div>
 				<div id="frameHolder" style="clear:both;">
 					<div id="puzzle-frame2">
 					</div>
 				</div>
-				<div id="pieces">
+				<div id="pieces2">
 					<h2>Pieces</h2>
 				</div>
+				<div data-role="popup" id="popupGagne">
+					<img src='res/img/boutons/gagne.gif'/>
+				</div>
 
-				<script src="js/drag-and-drop-puzzle.js"></script>
+				<script>
+
+				</script>
 			</div>
+			
+
+		</div>
+
+		<div data-role="footer" data-theme="a">
+			<p>&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
+		</div>
+	</div>
+
+	<!--************************************************************************************************************-->
+	<!-- 								Page pour le puzzle: niveau difficile											-->
+	<!--************************************************************************************************************-->
+
+	<div id="puzzle-niveau3" data-role="page" class="type-index">
+		<div data-role="header" data-theme="a">
+			<p align="center" style="color: white;">PUZZLE</p>
+			<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse" data-transition="slidedown" data-contact="false" rel="external">Home</a>
+		</div>
+
+		<div data-role="content" class="content">
+			<div id ='center' style='margin:0 auto;'>
+				<div id='top'>
+					<div id='affichageScore'style='display:block;float:left;'><h1>Votre score:<div id='score3'></div></h1></div>
+					<div id='affichageEssaisRestants'style='display:block;float:left;'><h1>Il te reste <div id='essaisRestants2'></div> essais</h1></div>
+					<div id='imageMiniature'style='display:block;float:left;'></div>
+				</div>
+				<div id="frameHolder" style="clear:both;">
+					<div id="puzzle-frame3">
+					</div>
+				</div>
+				<div id="pieces3">
+					<h2>Pieces</h2>
+				</div>
+				<div data-role="popup" id="popupGagne">
+					<img src='res/img/boutons/gagne.gif'/>
+				</div>
+
+				<script>
+
+				</script>
+			</div>
+			
+
 		</div>
 		<div data-role="footer" data-theme="a">
 			<p style="font-family:Comic Sans MS;">&copy; Copyright "IRC" 2012-2013, tous droits r&eacute;serv&eacute;s.</p>
 		</div>
-	</div>
-
-	
+	</div>	
 </body>
 </html>
