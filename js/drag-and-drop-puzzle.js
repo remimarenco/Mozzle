@@ -1,8 +1,8 @@
 // JavaScript Document
 // check for drag and drop support
 
-	var widthGlobale = 320;
-	var heightGlobale = 320;
+var widthGlobale = 320;
+var heightGlobale = 320;
 
 $( '#puzzle-niveau1' ).live( 'pageshow',function(event){
 	var niveau=1;
@@ -19,15 +19,15 @@ $( '#puzzle-niveau3' ).live( 'pageshow',function(event){
 	var nombrePiece=16;
 	initialisation(niveau,nombrePiece);
 });
+
 function initialisation(niveau,nombrePiece) {
 
 	var iOS = !!navigator.userAgent.match('iPhone OS') || !!navigator.userAgent.match('iPad');
-	afficherScore();
+	
 	//nombre piece du puzzle
 	console.log("niveau "+niveau);
 	
 	sessionStorage.setItem("nombrePiece",nombrePiece);
-
 
 	//on initialisele tableau contenant l'etat des places
 	for (i=1; i<=nombrePiece; i++) {
@@ -45,6 +45,7 @@ function initialisation(niveau,nombrePiece) {
 	
 	var url = "res/img/animaux/animalPuzzle/animal1.png";
 	createPuzzle(niveau, url);
+	afficherScore();
 	 //resize();
 }
  
@@ -65,7 +66,6 @@ function drop(target, e) {
 		//on indique que cet emplacement est correctement remplit
 		sessionStorage.setItem(target.id,1);
 	}
-
 
 	e.preventDefault();
 	//on parcourt le local storage de toute les places pour verifier si la partie n'est pas finie
@@ -125,6 +125,21 @@ function partieGagnee()
 	var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
 	setTimeout("$('#popupGagne').popup('close');", 5000);
 	//alert("gagner");
+
+	// On ajoute un score en fonction du niveau
+	var niveau = sessionStorage.getItem("niveau");
+	if(niveau == 1)
+	{
+		ajouterAuScore(10);
+	}
+	else if(niveau == 2)
+	{
+		ajouterAuScore(20);
+	}
+	else if(niveau == 3)
+	{
+		ajouterAuScore(30);
+	}
 }
 
 //Function ajouterAuScore
@@ -152,26 +167,29 @@ function afficherScore()
 	{
 		sessionStorage.setItem("score",0);
 	}
+
+	console.log("On affiche le score : "+sessionStorage.getItem("score"));
 	
 	//on recupere dans le score et on l'insere dans la div prévue
-	$('#score').html(sessionStorage.getItem("score"));
+	$('#score'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("score"));
 }
 
 function liresound (soundFile) { 
- var audio;
- audio = new Audio(soundFile);
- audio.play();
+	var audio;
+	audio = new Audio(soundFile);
+	audio.play();
 }
 
 function createPuzzle(niveau, url)
 {
+	// On stocke le niveau dans le local storage
+	sessionStorage.setItem("niveau",niveau);
+
 	// Récupération de l'élément qui va contenir la div
 	var myCtn=document.getElementById("puzzle-frame"+niveau);
 
 	myCtn.style.height = heightGlobale + "px";
 	myCtn.style.width = widthGlobale + "px";
-
-	
 
 	var morceauPuzzle = document.createElement('DIV');
 	
