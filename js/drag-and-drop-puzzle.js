@@ -30,9 +30,13 @@ function initialisation(niveau,nombrePiece) {
 	sessionStorage.setItem("nombrePiece",nombrePiece);
 	sessionStorage.setItem("niveau",niveau);
 	
-	//si on est au niveau 3 on gere le nombre de déplacement
-	if(sessionStorage.getItem("niveau")==2) {
-		sessionStorage.setItem("essaisRestants",10);
+	//si on est au niveau 2 ou 3 on gere le nombre de déplacement
+	if(sessionStorage.getItem("niveau")==2 ) {
+		sessionStorage.setItem("essaisRestants",18);
+		afficherEssais();
+	} else if (sessionStorage.getItem("niveau")==3) {
+		sessionStorage.setItem("essaisRestants",32);
+		console.log("essai restant niveau3: "+sessionStorage.getItem('essaisRestants'));
 		afficherEssais();
 	}
 
@@ -48,7 +52,6 @@ function initialisation(niveau,nombrePiece) {
 	//des places dans le puzzle frame
 	for (i=1; i<=nombrePiece; i++) {
 		$('#puzzle-frame'+niveau).append("<div id=\"place"+i+"\"  ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
-		console.log("<div id=\"place"+i+"\"  ondrop=\"drop(this, event);\" ondragenter=\"return false;\" ondragover=\"return false;\"></div>");
 	}
 	
 	var url = "res/img/animaux/animalPuzzle/animal1.png";
@@ -82,18 +85,17 @@ function drop(target, e) {
 	for (i=1; i<=sessionStorage.getItem("nombrePiece");i++) {
 
 		//si une place n'est pas occupé la partie est finie
-		console.log("place"+i +" "+sessionStorage.getItem("place"+i));
+		
 		if (sessionStorage.getItem("place"+i)==0) 
 		{
 			estFinie=0;
 		}
 
 	}
-	//si on est au niveau 3 on gere le nombre de déplacement
-	if(sessionStorage.getItem("niveau")==2) {
+	//si on est au niveau 3 ou 2 on gere le nombre de déplacement
+	if(sessionStorage.getItem("niveau")==2 || sessionStorage.getItem("niveau")==3 ) {
 		
-		
-		console.log("passage dans la modif nombre essais");
+
 		//on décrémente le nombre d'essais
 		var essaisRestants=parseInt(sessionStorage.getItem("essaisRestants"))-1;
 		sessionStorage.setItem("essaisRestants",essaisRestants);
@@ -146,9 +148,10 @@ function resize() {
 function partieGagnee()
 {
 	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
-	var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
-	setTimeout("$('#popupGagne').popup('close');", 5000);
-	//alert("gagner");
+	
+	//on ouvre une popup lorsque
+	var myVar=setTimeout(function(){$("#popupGagne"+sessionStorage.getItem("niveau")).popup("open");},1500);
+	setTimeout("$('#popupGagne'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
 
 	// On ajoute un score en fonction du niveau
 	var niveau = sessionStorage.getItem("niveau");
@@ -170,19 +173,18 @@ function partieGagnee()
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie perdue
 function partiePerdue()
 {
-	//$('body').append("<audio autoplay><source src='"+word['audio']+"' type='audio/ogg'></audio>");
-	//var myVar=setTimeout(function(){$("#popupGagne").popup("open");},1500);
-	//setTimeout("$('#popupGagne').popup('close');", 5000);
-	alert("perdueee");
-
+	$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.wav' type='audio/wav'></audio>");
+	$("#popupPerdu"+sessionStorage.getItem("niveau")).popup("open");
+	setTimeout("$('#popupPerdu'"+sessionStorage.getItem('niveau')+").popup('close');", 5000);
+	setTimeout(function(){location.reload();}, 6000);
 	var niveau = sessionStorage.getItem("niveau");
-
 	if(niveau == 3)
 	{
 		ajouterAuScore(-10);
 	}
 	
 	afficherScore();
+
 }
 
 //Function ajouterAuScore
@@ -217,7 +219,6 @@ function afficherScore()
 		sessionStorage.setItem("score",0);
 	}
 
-	console.log("On affiche le score : "+sessionStorage.getItem("score"));
 	
 
 	//on recupere dans le score et on l'insere dans la div prévue
@@ -228,7 +229,7 @@ function afficherScore()
 //Recupere le score et l'insere dans la div "score"
 function afficherEssais()
 {
-	console.log("essaisRestatnts"+sessionStorage.getItem("essaisRestants"));
+	console.log("afficher essais: "+sessionStorage.getItem('essaisRestants'));
 	//on recupere dans le score et on l'insere dans la div prévues
 	$('#essaisRestants'+sessionStorage.getItem("niveau")).html(sessionStorage.getItem("essaisRestants"));
 }
@@ -422,7 +423,7 @@ function afficheMorceauPuzzle(niveau, url)
 		
 		morceauHeight = heightGlobale / 4;
 		morceauWidth = widthGlobale / 4;
-		console.log("morceau "+	morceauHeight+" global "+heightGlobale);	
+
 		for (i=1; i<=sessionStorage.getItem("nombrePiece"); i++) {
 			var place=document.getElementById("place"+i);
 			place.style.height = morceauHeight+"px";
