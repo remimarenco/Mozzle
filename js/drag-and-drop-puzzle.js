@@ -29,6 +29,7 @@ function initialisation(niveau,nombrePiece) {
 	
 	localStorage.setItem("nombrePiece",nombrePiece);
 	localStorage.setItem("niveau",niveau);
+	localStorage.setItem("estFinie",0);
 	
 	//si on est au niveau 2 ou 3 on gere le nombre de déplacement
 	if(localStorage.getItem("niveau")==2 ) {
@@ -102,6 +103,9 @@ function drop(target, e) {
 		}
 
 	}
+	
+	localStorage.setItem("estFinie",estFinie);
+	
 	//si on est au niveau 3 ou 2 on gere le nombre de déplacement
 	if(localStorage.getItem("niveau")==2 || localStorage.getItem("niveau")==3 ) {
 		
@@ -113,7 +117,6 @@ function drop(target, e) {
 		//siil ne reste plus d'essais la partie est finie
 		if(essaisRestants==0 && estFinie!=1)
 		{
-			console.log("pppppppppppppasssssssssssssssssage");
 			partiePerdue();
 		}
 		afficherEssais();
@@ -158,12 +161,10 @@ function resize() {
 //Fonction appellée lorsque le puzzle est finie, doit gérer le traitement de fin de partie 
 function partieGagnee()
 {
+	$("#popupGagnePuzzle"+localStorage.getItem("niveau")).popup("open");
+	$('body').append("<audio autoplay><source src='res/audio/animaux/Fr-chat.ogg' type='audio/ogg'></audio>");
 	
-	//on ouvre une popup lorsque
-	var myVar=setTimeout(function(){
-		$("#popupGagnePuzzle"+localStorage.getItem("niveau")).popup("open");
-		$('body').append("<audio autoplay><source src='res/audio/animaux/Fr-chat.ogg' type='audio/ogg'></audio>");
-	},1500);
+
 	
 	//setTimeout("$('#popupGagne"+localStorage.getItem('niveau')+"').popup('close');", 5000);
 
@@ -181,6 +182,18 @@ function partieGagnee()
 	{
 		ajouterAuScore(30);
 	}
+		//on ouvre une popup lorsque
+	var myVar=setTimeout(function(){
+		var niveauSuivant=parseInt(niveau)+1;
+		if(niveauSuivant<4)
+		{
+			//transition vers la page du niveau suivant
+			$.mobile.changePage( "#puzzle-niveau"+niveauSuivant);
+		} else {
+			$.mobile.changePage( "#type-puzzle");
+		}
+	},1500);
+	
 }
 
 //Function partiePerdue
@@ -188,11 +201,13 @@ function partieGagnee()
 function partiePerdue()
 {
 	//on ouvre une popup lorsque
-	var myVar=setTimeout(function(){
-		$("#popupPerduPuzzle"+localStorage.getItem("niveau")).popup("open");
-		$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.ogg' type='audio/ogg'></audio>");
-	},2);
+	$("#popupPerduPuzzle"+localStorage.getItem("niveau")).popup("open");
+	$('body').append("<audio autoplay><source src='res/audio/boutons/perdu.ogg' type='audio/ogg'></audio>");
+	
 
+	var myVar=setTimeout(function(){
+		location.reload();
+	},2000);
 	
 	//setTimeout("$('#popupPerdu"+localStorage.getItem('niveau')+"').popup('close');", 5000);
 	//setTimeout(function(){location.reload();}, 6000);
@@ -578,7 +593,7 @@ function afficheMorceauPuzzle(niveau, url)
 function compteur()
 {
 	$('#countdown').countDown({
-		startNumber: 60,
+		startNumber: 90,
 		callBack: function(me) {
 			$('#countdown').html('0');
 			partiePerdue();
@@ -613,7 +628,11 @@ jQuery.fn.countDown = function(settings,to) {
 			'fontSize': settings.endFontSize
 		},settings.duration,'',function() {
 			if(to > settings.endNumber + 1) {
-				$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+
+				if(localStorage.getItem("estFinie")==0) 
+				{
+					$(this).css('fontSize',settings.startFontSize).text(to - 1).countDown(settings,to - 1);
+				}
 			}
 			else
 			{
