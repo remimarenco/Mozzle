@@ -37,6 +37,15 @@ $("#type-learn").live( 'pageshow',function(event){
 
 function jouerSon(audio){
 	$('body').append("<audio autoplay><source src='"+audio+"' type='audio/ogg'></audio>");
+
+	var chemin = "/android_asset/www/"+audio;
+    console.log(chemin);
+    sound = new Media(audio, function(){ 
+        console.log('son charger');
+    });   
+
+    // Jouer le son
+    sound.play();
 }
 
 

@@ -8,7 +8,7 @@ $(document).bind("mobileinit", function(){
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function onDeviceReady(){
-    jeuxMot();
+    //jeuxMot();
 }
 
 $(document).ready(function(){
@@ -22,7 +22,7 @@ $(document).ready(function(){
     $('#score_mot').html(localStorage.getItem("score_mot"));
 })
 
-function jeuxMot(){
+//function jeuxMot(){
 var nbDragAction = 1;   // Nombre de fois que l'on peux jouer (autant que de lettre + 1)
 var word = '';
 
@@ -126,7 +126,7 @@ $( '#mot-niveau-3' ).live( 'pageshow',function(event){
     $('#illustration3').append("<img src='"+word['img']+"' />");
 
 });
-}
+//}
 
 // Permet d'obtenir un mot au hazard de la liste de mot
 function getOneRandomWord(){
@@ -229,6 +229,7 @@ function drop_mot(target, e, difficulte) {
 
 function jouerSon(audio){
     $('body').append("<audio autoplay><source src='"+audio+"' type='audio/ogg'></audio>");
+    
     var chemin = "/android_asset/www/"+audio;
     console.log(chemin);
     sound = new Media(audio, function(){ 
